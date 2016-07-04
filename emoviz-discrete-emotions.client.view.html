@@ -12,13 +12,8 @@
         </div>
 
         <div flex style="padding-left: 20px;">
-            <md-slider flex="" class="md-primary" md-discrete="" ng-model="emotion.emotion_level" step="1" min="1" ng-disabled="ngDisabled"
-                       max="100">
-            </md-slider>
-        </div>
-        <div flex="10" layout layout-align="center center">
-            <span class="md-content"
-                  style="background-color: #26a9df; border-radius: 50%; padding: 10px; margin-left: 10px;  color: white; font-size: 10px">{{ emotion.emotion_level }}</span>
+            <discrete-emotions-tl check-point='startEndSwitcher'
+                                  emotion-level-values='emotion.emotion_level'></discrete-emotions-tl>
         </div>
     </div>
 </section>

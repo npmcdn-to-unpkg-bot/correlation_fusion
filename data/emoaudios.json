@@ -1,0 +1,4770 @@
+[
+  {
+    "_id": {
+      "$oid": "577a248eb9eb183f0fde367c"
+    },
+    "sp_session": {
+      "$oid": "575ef103f1a57a61252b4fe6"
+    },
+    "audio_emotion_scores": {
+      "recordingId": "8f81699d-842a-4c10-8de6-15a61359c160",
+      "result": {
+        "analysisSummary": {
+          "AnalysisResult": {
+            "Arousal": {
+              "ModePct": "93.02",
+              "Mode": "low"
+            },
+            "Valence": {
+              "ModePct": "76.74",
+              "Mode": "positive"
+            },
+            "Temper": {
+              "ModePct": "86.05",
+              "Mode": "low"
+            }
+          }
+        },
+        "analysisSegments": [
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Grief. Search for comfort.",
+                    "Id": 97
+                  },
+                  "Primary": {
+                    "Phrase": "Sense of mission mixed with strong reservations.",
+                    "Id": 394
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  },
+                  "Primary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "51.95"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "4.35"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "82.28"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "19.82"
+              }
+            },
+            "duration": 37410,
+            "offset": 4576
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Controlled communicator. \"Teacher/class\" scenario.",
+                    "Id": 302
+                  },
+                  "Primary": {
+                    "Phrase": "Communication from deep appreciation. Possibly admiration.",
+                    "Id": 350
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Supremacy, Arrogance",
+                    "Id": 11
+                  },
+                  "Primary": {
+                    "Phrase": "Love, Happiness",
+                    "Id": 8
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "25.80"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "4.02"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "81.13"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": 50,
+                  "Mode": "low"
+                },
+                "Group": "medium",
+                "Value": "29.27"
+              }
+            },
+            "duration": 27450,
+            "offset": 41996
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Sense of alienation. Searching for warmth.",
+                    "Id": 127
+                  },
+                  "Primary": {
+                    "Phrase": "Emotional overflow. Attempting to realize dreams.",
+                    "Id": 364
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Friendly, Warm",
+                    "Id": 4
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "58.35"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "5.63"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "92.11"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "66.67",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "19.07"
+              }
+            },
+            "duration": 20550,
+            "offset": 73316
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Fear of expressing strong emotions.",
+                    "Id": 304
+                  },
+                  "Primary": {
+                    "Phrase": "Communication difficulties. Struggle to express desires.",
+                    "Id": 292
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "20.05"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "10.20"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "78.31"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": 75,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "15.81"
+              }
+            },
+            "duration": 30460,
+            "offset": 147856
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Communication difficulties. Struggle to express desires.",
+                    "Id": 292
+                  },
+                  "Primary": {
+                    "Phrase": "Need to cope with lack of confidence.",
+                    "Id": 61
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "4.44"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "77.05"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": 80,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "19.39"
+              }
+            },
+            "duration": 30500,
+            "offset": 185966
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Seeking respect/appreciation.",
+                    "Id": 286
+                  },
+                  "Primary": {
+                    "Phrase": "Seeking solution to an emotional problem.",
+                    "Id": 94
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "89.46"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.23"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "99.59"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "83.33",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "18.73"
+              }
+            },
+            "duration": 15370,
+            "offset": 217456
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Emotional void. Love, conviction.",
+                    "Id": 211
+                  },
+                  "Primary": {
+                    "Phrase": "Talkativeness from a point of weakness or sensitivity.",
+                    "Id": 313
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "8.75"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.82"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "67.35"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.71",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "11.80"
+              }
+            },
+            "duration": 26220,
+            "offset": 234766
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Seeking contact/warmth. Fear of failure.",
+                    "Id": 181
+                  },
+                  "Primary": {
+                    "Phrase": "Act of admiration, devoutness. Loyalty.",
+                    "Id": 31
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  },
+                  "Primary": {
+                    "Phrase": "Love, Happiness",
+                    "Id": 8
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "87.50",
+                  "Mode": "low"
+                },
+                "Group": "neutral",
+                "Value": "38.38"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "88.38"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "87.50",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "21.39"
+              }
+            },
+            "duration": 30410,
+            "offset": 262106
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Strong ambition, drive to succeed, joy.",
+                    "Id": 113
+                  },
+                  "Primary": {
+                    "Phrase": "Conviction. Enthusiasm based on actions or achievements.",
+                    "Id": 212
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Love, Happiness",
+                    "Id": 8
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "73.96"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "77.78",
+                  "Mode": "low"
+                },
+                "Group": "neutral",
+                "Value": "58.52"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "95.70"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "77.78",
+                  "Mode": "low"
+                },
+                "Group": "medium",
+                "Value": "37.08"
+              }
+            },
+            "duration": 14860,
+            "offset": 292526
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Action born out of great (ecstatic) enthusiasm. Conviction.",
+                    "Id": 32
+                  },
+                  "Primary": {
+                    "Phrase": "Searching for a solution to a problem. Use of imagination.",
+                    "Id": 74
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "98.31"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": 80,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "1.80"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "83.16"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": 70,
+                  "Mode": "low"
+                },
+                "Group": "medium",
+                "Value": "28.17"
+              }
+            },
+            "duration": 21720,
+            "offset": 307396
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Communication to win attention and control. Conviction.",
+                    "Id": 322
+                  },
+                  "Primary": {
+                    "Phrase": "Highly sensitive, Hope for solution. Spirituality.",
+                    "Id": 319
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "46.55"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "81.82",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "1.73"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "77.12"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "72.73",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "11.22"
+              }
+            },
+            "duration": 13750,
+            "offset": 333306
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Mourning, loss, grief.",
+                    "Id": 352
+                  },
+                  "Primary": {
+                    "Phrase": "Longing, introversion and shyness.",
+                    "Id": 166
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "83.33",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "1.48"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 100,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "81.12"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": 75,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "18.44"
+              }
+            },
+            "duration": 16500,
+            "offset": 349116
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Helplessness.",
+                    "Id": 139
+                  },
+                  "Primary": {
+                    "Phrase": "Longing for contact. Seeking harmony.",
+                    "Id": 202
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "84.62",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "16.50"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "92.31",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "29.41"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "76.92",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "19.18"
+              }
+            },
+            "duration": 28300,
+            "offset": 409696
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Vision, imagination, devoutness, ideology. Charisma.",
+                    "Id": 68
+                  },
+                  "Primary": {
+                    "Phrase": "Positive imagination. Joy.",
+                    "Id": 89
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "31.08"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "85.71",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "0.46"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "92.86",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "96.53"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "71.43",
+                  "Mode": "low"
+                },
+                "Group": "medium",
+                "Value": "27.73"
+              }
+            },
+            "duration": 29960,
+            "offset": 438006
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Sense of failure. Fear of missing an opportunity.",
+                    "Id": 103
+                  },
+                  "Primary": {
+                    "Phrase": "Disguised passion, possibly from shyness.",
+                    "Id": 130
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "1.42"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "86.67",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "10.15"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "93.33",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "70.78"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "73.33",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "19.94"
+              }
+            },
+            "duration": 32680,
+            "offset": 467976
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Fear of expressing strong emotions.",
+                    "Id": 304
+                  },
+                  "Primary": {
+                    "Phrase": "Frustration from search for contact.",
+                    "Id": 205
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "19.73"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "87.50",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "5.83"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "93.75",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "63.08"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": 75,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "12.32"
+              }
+            },
+            "duration": 20870,
+            "offset": 500666
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Need to cope with lack of confidence.",
+                    "Id": 61
+                  },
+                  "Primary": {
+                    "Phrase": "Communication difficulties. Struggle to express desires.",
+                    "Id": 292
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "19.62"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "88.24",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "2.31"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "94.12",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "86.75"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "76.47",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "18.31"
+              }
+            },
+            "duration": 24550,
+            "offset": 521546
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Talkativeness from a point of weakness or sensitivity.",
+                    "Id": 313
+                  },
+                  "Primary": {
+                    "Phrase": "Introversion and shyness.",
+                    "Id": 265
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "20.52"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "88.89",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "0.75"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "94.44",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "61.39"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "77.78",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "7.50"
+              }
+            },
+            "duration": 20260,
+            "offset": 556396
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Concealed passion, restrained creativity.",
+                    "Id": 298
+                  },
+                  "Primary": {
+                    "Phrase": "Painful communication. High sensitivity.",
+                    "Id": 274
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "20.43"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "89.47",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.45"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "89.47",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "35.68"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "78.95",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "9.15"
+              }
+            },
+            "duration": 14260,
+            "offset": 576666
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Sense of mission and goal-oriented, mixed with concern. \"Butterflies\".",
+                    "Id": 358
+                  },
+                  "Primary": {
+                    "Phrase": "Sadness and hope.",
+                    "Id": 391
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  },
+                  "Primary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "14.41"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": 90,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "1.82"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 90,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "79.10"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": 80,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "12.32"
+              }
+            },
+            "duration": 32590,
+            "offset": 590936
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Repressed or stressful desires and dreams.",
+                    "Id": 112
+                  },
+                  "Primary": {
+                    "Phrase": "Strong sentimental expression. Seeking gratification.",
+                    "Id": 307
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "14.78"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "90.48",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "9.54"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "90.48",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "75.41"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "80.95",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "17.81"
+              }
+            },
+            "duration": 41700,
+            "offset": 623536
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Communication difficulties. Struggle to express desires.",
+                    "Id": 292
+                  },
+                  "Primary": {
+                    "Phrase": "Talkativeness from a point of weakness or sensitivity.",
+                    "Id": 313
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "83.93"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "90.91",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "1.48"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "90.91",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "90.70"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "81.82",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "17.82"
+              }
+            },
+            "duration": 19420,
+            "offset": 665426
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Seeking warmth and attention.",
+                    "Id": 256
+                  },
+                  "Primary": {
+                    "Phrase": "Painful communication. High sensitivity.",
+                    "Id": 274
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "24.14"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "91.30",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "2.88"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "91.30",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "95.45"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "82.61",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "21.34"
+              }
+            },
+            "duration": 16930,
+            "offset": 687066
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Communication difficulties.",
+                    "Id": 301
+                  },
+                  "Primary": {
+                    "Phrase": "Escape from unpleasant reality. Focus on creativity.",
+                    "Id": 334
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "19.64"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "91.67",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.92"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "87.50",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "52.23"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "83.33",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "20.73"
+              }
+            },
+            "duration": 18040,
+            "offset": 704006
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Intuition or hidden feeling.",
+                    "Id": 385
+                  },
+                  "Primary": {
+                    "Phrase": "Longing, introversion and shyness.",
+                    "Id": 166
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": 92,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "7.06"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 84,
+                  "Mode": "positive"
+                },
+                "Group": "negative",
+                "Value": "13.09"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": 84,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "16.70"
+              }
+            },
+            "duration": 14360,
+            "offset": 732236
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Communication difficulties. Struggle to express desires.",
+                    "Id": 292
+                  },
+                  "Primary": {
+                    "Phrase": "Sense of mission and goal-oriented, mixed with concern. \"Butterflies\".",
+                    "Id": 358
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "6.87"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "92.31",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "7.29"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "80.77",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "36.18"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "84.62",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "14.02"
+              }
+            },
+            "duration": 38820,
+            "offset": 773186
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Sadness, emotional deprivation. Disappointment.",
+                    "Id": 238
+                  },
+                  "Primary": {
+                    "Phrase": "Strong sentimental expression. Seeking gratification.",
+                    "Id": 307
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "92.59",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "7.59"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "81.48",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "69.20"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.19",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "14.11"
+              }
+            },
+            "duration": 39910,
+            "offset": 835766
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Painful communication. High sensitivity.",
+                    "Id": 274
+                  },
+                  "Primary": {
+                    "Phrase": "Creation based on internal conviction.",
+                    "Id": 370
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "1.65"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "92.86",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "17.14"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "78.57",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "51.81"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.71",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "15.21"
+              }
+            },
+            "duration": 21040,
+            "offset": 882196
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Highly sensitive, Hope for solution. Spirituality.",
+                    "Id": 319
+                  },
+                  "Primary": {
+                    "Phrase": "Emotional coping. Internal struggle or interpersonal conflict.",
+                    "Id": 1
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "9.77"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.10",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "1.18"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "79.31",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "62.99"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "86.21",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "17.15"
+              }
+            },
+            "duration": 13010,
+            "offset": 903246
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Talkativeness from a point of weakness or sensitivity.",
+                    "Id": 313
+                  },
+                  "Primary": {
+                    "Phrase": "Concern and conflict.",
+                    "Id": 367
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.33",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "7.63"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.67",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "51.34"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "86.67",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "10.94"
+              }
+            },
+            "duration": 45000,
+            "offset": 916266
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Coping with painful problems. Possibly seeking personal contact. Longing.",
+                    "Id": 73
+                  },
+                  "Primary": {
+                    "Phrase": "Talkativeness covering feelings of pain and hardship.",
+                    "Id": 310
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.55",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "8.51"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.42",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": 93
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "87.10",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "15.36"
+              }
+            },
+            "duration": 18260,
+            "offset": 961276
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Communication difficulties.",
+                    "Id": 301
+                  },
+                  "Primary": {
+                    "Phrase": "Emotional overflow. Attempting to realize dreams.",
+                    "Id": 364
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.75",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "17.30"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 75,
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "47.41"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "87.50",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "17.13"
+              }
+            },
+            "duration": 32650,
+            "offset": 994476
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Pain and search for emotional warmth and/or recognition.",
+                    "Id": 196
+                  },
+                  "Primary": {
+                    "Phrase": "Hopes and dreams. Disappointment possible.",
+                    "Id": 328
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "13.96"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.94",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.73"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "75.76",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "96.25"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "87.88",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "14.78"
+              }
+            },
+            "duration": 24510,
+            "offset": 1027136
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Sadness and hope.",
+                    "Id": 391
+                  },
+                  "Primary": {
+                    "Phrase": "Pain, vulnerability, need to fight.",
+                    "Id": 40
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "55.68"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.12",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "9.46"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.47",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "84.75"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.24",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "17.59"
+              }
+            },
+            "duration": 35130,
+            "offset": 1051656
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Conflict between feelings and reality.",
+                    "Id": 382
+                  },
+                  "Primary": {
+                    "Phrase": "Hurt and sorrow, painful communication.",
+                    "Id": 295
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  },
+                  "Primary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "15.31"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.29",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "0.21"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.14",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "91.43"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.57",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "13.19"
+              }
+            },
+            "duration": 21250,
+            "offset": 1093596
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Seeking relief for emotional pain. Possibly sense of unfairness.",
+                    "Id": 46
+                  },
+                  "Primary": {
+                    "Phrase": "Communication difficulties. Struggle to express desires.",
+                    "Id": 292
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "33.53"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.44",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "5.68"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.78",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "78.24"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.89",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "18.84"
+              }
+            },
+            "duration": 14150,
+            "offset": 1116246
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Pain, vulnerability, need to fight.",
+                    "Id": 40
+                  },
+                  "Primary": {
+                    "Phrase": "Seeking solution to an emotional problem.",
+                    "Id": 94
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "5.74"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.59",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "5.17"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "75.68",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "53.40"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "89.19",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "17.15"
+              }
+            },
+            "duration": 40280,
+            "offset": 1131666
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Sad and seeking companionship.",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Driven by emotions or inhibitions. Attempt to hide feelings.",
+                    "Id": 133
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  },
+                  "Primary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "10.12"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.74",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "6.07"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.32",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "76.10"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "89.47",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "15.38"
+              }
+            },
+            "duration": 24660,
+            "offset": 1171956
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Highly sensitive, Hope for solution. Spirituality.",
+                    "Id": 319
+                  },
+                  "Primary": {
+                    "Phrase": "Confession of feelings. Emotionally open.",
+                    "Id": 259
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  },
+                  "Primary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "11.91"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.87",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.15"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "74.36",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "49.41"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "89.74",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "11.46"
+              }
+            },
+            "duration": 29230,
+            "offset": 1258896
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Confession of feelings. Emotionally open.",
+                    "Id": 259
+                  },
+                  "Primary": {
+                    "Phrase": "Painful communication. High sensitivity.",
+                    "Id": 274
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "20.74"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": 95,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "4.59"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "72.50",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "41.53"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": 90,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "12.68"
+              }
+            },
+            "duration": 25490,
+            "offset": 1288136
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Seeking to rationalize feelings of joy. Possibly from embarrassment.",
+                    "Id": 160
+                  },
+                  "Primary": {
+                    "Phrase": "Communication difficulties. Struggle to express desires.",
+                    "Id": 292
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "27.29"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "95.12",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "0.92"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "73.17",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "85.65"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "90.24",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "21.11"
+              }
+            },
+            "duration": 15890,
+            "offset": 1313636
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Painful communication. High sensitivity.",
+                    "Id": 274
+                  },
+                  "Primary": {
+                    "Phrase": "Communication difficulties. Struggle to express desires.",
+                    "Id": 292
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "95.24",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "14.52"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "73.81",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "77.69"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "90.48",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "13.12"
+              }
+            },
+            "duration": 42290,
+            "offset": 1330016
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Happiness, love.",
+                    "Id": 125
+                  },
+                  "Primary": {
+                    "Phrase": "Missionary leadership. Stubbornness.",
+                    "Id": 395
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Love, Happiness",
+                    "Id": 8
+                  },
+                  "Primary": {
+                    "Phrase": "Supremacy, Arrogance",
+                    "Id": 11
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "47.81"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.02",
+                  "Mode": "low"
+                },
+                "Group": "high",
+                "Value": "92.88"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "74.42",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "96.20"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.37",
+                  "Mode": "low"
+                },
+                "Group": "medium",
+                "Value": "46.38"
+              }
+            },
+            "duration": 13010,
+            "offset": 1376666
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Conflict between desires and conventions. Weakness or self-guilt.",
+                    "Id": 145
+                  },
+                  "Primary": {
+                    "Phrase": "Communication difficulties.",
+                    "Id": 301
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "7.63"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.18",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "2.12"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "72.73",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "57.69"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.64",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "16.96"
+              }
+            },
+            "duration": 23240,
+            "offset": 1391906
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Seeking respect/appreciation.",
+                    "Id": 286
+                  },
+                  "Primary": {
+                    "Phrase": "Painful communication. High sensitivity.",
+                    "Id": 274
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "5.56"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.33",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "5.40"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "73.33",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "61.50"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.89",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "14.50"
+              }
+            },
+            "duration": 35100,
+            "offset": 1428316
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Internal conviction. Enthusiasm based on actions or achievements.",
+                    "Id": 377
+                  },
+                  "Primary": {
+                    "Phrase": "Action based on enthusiasm. Use of \"positive imagination\". Expression of empowering experience.",
+                    "Id": 188
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "68.08"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.48",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "24.76"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "73.91",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "79.49"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "86.96",
+                  "Mode": "low"
+                },
+                "Group": "medium",
+                "Value": "33.61"
+              }
+            },
+            "duration": 13800,
+            "offset": 1463426
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Expression of sensitivity. Disappointment.",
+                    "Id": 316
+                  },
+                  "Primary": {
+                    "Phrase": "Disguised passion, possibly from shyness.",
+                    "Id": 130
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  },
+                  "Primary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "25.36"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.62",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "6.68"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "74.47",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "99.63"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "87.23",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "15.90"
+              }
+            },
+            "duration": 13760,
+            "offset": 1477236
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Repressed or stressful desires and dreams.",
+                    "Id": 112
+                  },
+                  "Primary": {
+                    "Phrase": "Talkativeness from a point of weakness or sensitivity.",
+                    "Id": 313
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "43.80"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.75",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "2.92"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 75,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "80.88"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "87.50",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "10.39"
+              }
+            },
+            "duration": 15000,
+            "offset": 1491006
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Painful communication. High sensitivity.",
+                    "Id": 274
+                  },
+                  "Primary": {
+                    "Phrase": "Introversion and shyness.",
+                    "Id": 265
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "23.50"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.88",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.02"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "75.51",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "91.13"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "87.76",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "16.53"
+              }
+            },
+            "duration": 21630,
+            "offset": 1537106
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Struggling with distress.",
+                    "Id": 406
+                  },
+                  "Primary": {
+                    "Phrase": "Difficulty accepting an opinion because of difficulty to accept authority.",
+                    "Id": 430
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "14.58"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": 94,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "11.28"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 76,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "70.43"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": 88,
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "15.45"
+              }
+            },
+            "duration": 23230,
+            "offset": 1558746
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Sadness and hope.",
+                    "Id": 391
+                  },
+                  "Primary": {
+                    "Phrase": "Concealed emotional struggle.",
+                    "Id": 4
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "3.57"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.12",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "7.10"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.47",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "92.76"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.24",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "17.25"
+              }
+            },
+            "duration": 21290,
+            "offset": 1594466
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Communication difficulties. Struggle to express desires.",
+                    "Id": 292
+                  },
+                  "Primary": {
+                    "Phrase": "Intuition or hidden feeling.",
+                    "Id": 385
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "30.50"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.23",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "9.49"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 75,
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "39.51"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.46",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "21.31"
+              }
+            },
+            "duration": 22160,
+            "offset": 1615766
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Communication to win attention and control. Conviction.",
+                    "Id": 322
+                  },
+                  "Primary": {
+                    "Phrase": "Fear of expressing strong emotions.",
+                    "Id": 304
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "62.30"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.34",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "6.22"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "75.47",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "61.46"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.68",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "16.62"
+              }
+            },
+            "duration": 23840,
+            "offset": 1640886
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Longing for contact, introversion.",
+                    "Id": 253
+                  },
+                  "Primary": {
+                    "Phrase": "Need to protect a relationship, concerns.",
+                    "Id": 346
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.44",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "13.30"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "74.07",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "31.37"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.89",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "15.42"
+              }
+            },
+            "duration": 33360,
+            "offset": 1672246
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Sense of distress.",
+                    "Id": 136
+                  },
+                  "Primary": {
+                    "Phrase": "Talkativeness from a point of weakness or sensitivity.",
+                    "Id": 313
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "17.31"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.55",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "4.75"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "74.55",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "96.54"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "89.09",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "22.92"
+              }
+            },
+            "duration": 30490,
+            "offset": 1706446
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Difficulty accepting an opinion because of difficulty to accept authority.",
+                    "Id": 430
+                  },
+                  "Primary": {
+                    "Phrase": "Introversion and shyness.",
+                    "Id": 265
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "5.97"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.64",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.98"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": 75,
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "89.90"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "89.29",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "15.13"
+              }
+            },
+            "duration": 32230,
+            "offset": 1736946
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Extroverted leadership. Pompous.",
+                    "Id": 371
+                  },
+                  "Primary": {
+                    "Phrase": "Extroverted leadership. Pompousness.",
+                    "Id": 140
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "89.27"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "92.98",
+                  "Mode": "low"
+                },
+                "Group": "neutral",
+                "Value": "46.67"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "75.44",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "89.65"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "87.72",
+                  "Mode": "low"
+                },
+                "Group": "medium",
+                "Value": "33.86"
+              }
+            },
+            "duration": 21040,
+            "offset": 1769186
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Escape from unpleasant reality. Focus on creativity.",
+                    "Id": 334
+                  },
+                  "Primary": {
+                    "Phrase": "Communication difficulties. Struggle to express desires.",
+                    "Id": 292
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "26.76"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.10",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.15"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "75.86",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "83.07"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "87.93",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "19.77"
+              }
+            },
+            "duration": 23030,
+            "offset": 1791796
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Seeking solitude, possibly for creative purposes.",
+                    "Id": 331
+                  },
+                  "Primary": {
+                    "Phrase": "Painful communication. High sensitivity.",
+                    "Id": 274
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "11.04"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.22",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "8.78"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.27",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "66.33"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.14",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "17.90"
+              }
+            },
+            "duration": 22030,
+            "offset": 1816286
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Seeking solitude, possibly for creative purposes.",
+                    "Id": 331
+                  },
+                  "Primary": {
+                    "Phrase": "Communication difficulties. Struggle to express desires.",
+                    "Id": 292
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "27.48"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.33",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.56"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.67",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "61.29"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.33",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "11.80"
+              }
+            },
+            "duration": 14660,
+            "offset": 1840436
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Action to achieve goal from a position of weakness and conviction.",
+                    "Id": 325
+                  },
+                  "Primary": {
+                    "Phrase": "Expression of sensitivity. Disappointment.",
+                    "Id": 316
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "25.15"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.44",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "5.41"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.05",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "82.01"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.52",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "22.21"
+              }
+            },
+            "duration": 23320,
+            "offset": 1855106
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Yearning for contact. Seeking harmony.",
+                    "Id": 268
+                  },
+                  "Primary": {
+                    "Phrase": "Faith, hope. Cry for attention.",
+                    "Id": 421
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "21.44"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.55",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "4.67"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.42",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "83.58"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.71",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "17.50"
+              }
+            },
+            "duration": 32420,
+            "offset": 1972706
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Yearning for contact. Seeking harmony.",
+                    "Id": 268
+                  },
+                  "Primary": {
+                    "Phrase": "Emotional overflow. Attempting to realize dreams.",
+                    "Id": 364
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "21.23"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.65",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "7.64"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.19",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "57.79"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.89",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "14.61"
+              }
+            },
+            "duration": 21910,
+            "offset": 2012226
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Painful communication. High sensitivity.",
+                    "Id": 274
+                  },
+                  "Primary": {
+                    "Phrase": "Confession of feelings. Emotionally open.",
+                    "Id": 259
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.75",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "16.12"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.56",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "76.38"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "89.06",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "16.02"
+              }
+            },
+            "duration": 26380,
+            "offset": 2044436
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Communication to win attention and control. Conviction.",
+                    "Id": 322
+                  },
+                  "Primary": {
+                    "Phrase": "Need to cope with lack of confidence.",
+                    "Id": 61
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "0.42"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.85",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "9.22"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.92",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "63.65"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "89.23",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "17.91"
+              }
+            },
+            "duration": 14080,
+            "offset": 2073016
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Defensive, projection of authority from position of weakness.",
+                    "Id": 70
+                  },
+                  "Primary": {
+                    "Phrase": "Self-blame. Regret.",
+                    "Id": 154
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.94",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.03"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.27",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "76.55"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "89.39",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "15.60"
+              }
+            },
+            "duration": 21400,
+            "offset": 2087106
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Fear under control. Possibly hidden despair.",
+                    "Id": 175
+                  },
+                  "Primary": {
+                    "Phrase": "Seeking contact/warmth. Fear of failure.",
+                    "Id": 181
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  },
+                  "Primary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "23.91"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.03",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "5.76"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.61",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "91.13"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "89.55",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "20.03"
+              }
+            },
+            "duration": 22860,
+            "offset": 2109636
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Hidden anxiety. Fake confidence.",
+                    "Id": 373
+                  },
+                  "Primary": {
+                    "Phrase": "Concealed passion, restrained creativity.",
+                    "Id": 298
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "21.57"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.12",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "9.03"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.47",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "50.46"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "89.71",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "16.42"
+              }
+            },
+            "duration": 24380,
+            "offset": 2144116
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Extroverted leadership. Pompousness.",
+                    "Id": 140
+                  },
+                  "Primary": {
+                    "Phrase": "Demagoguery, populist interpersonal communication. Manipulative.",
+                    "Id": 62
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "82.50"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "94.20",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "1.42"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.81",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "87.30"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "88.41",
+                  "Mode": "low"
+                },
+                "Group": "medium",
+                "Value": "29.46"
+              }
+            },
+            "duration": 15280,
+            "offset": 2168506
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Pompous. Over excitement. Communication of an empowering feeling.",
+                    "Id": 320
+                  },
+                  "Primary": {
+                    "Phrase": "Commanding. Authoritative communication.",
+                    "Id": 422
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  },
+                  "Primary": {
+                    "Phrase": "Supremacy, Arrogance",
+                    "Id": 11
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "37.49"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "92.86",
+                  "Mode": "low"
+                },
+                "Group": "high",
+                "Value": "96.40"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.14",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "93.02"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "87.14",
+                  "Mode": "low"
+                },
+                "Group": "medium",
+                "Value": "34.44"
+              }
+            },
+            "duration": 15720,
+            "offset": 2183796
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Friendly communication.",
+                    "Id": 254
+                  },
+                  "Primary": {
+                    "Phrase": "Action to control/dominate.",
+                    "Id": 35
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Friendly, Warm",
+                    "Id": 4
+                  },
+                  "Primary": {
+                    "Phrase": "Supremacy, Arrogance",
+                    "Id": 11
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "93.47"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "92.96",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "16.96"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.46",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "82.57"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.92",
+                  "Mode": "low"
+                },
+                "Group": "medium",
+                "Value": "32.25"
+              }
+            },
+            "duration": 13010,
+            "offset": 2199526
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Concealed emotional struggle.",
+                    "Id": 4
+                  },
+                  "Primary": {
+                    "Phrase": "Fear of challenges, defensive and emotional. Strong convictions.",
+                    "Id": 67
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.06",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.05"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.78",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "98.28"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "86.11",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "18.96"
+              }
+            },
+            "duration": 30570,
+            "offset": 2212546
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Talkativeness from a point of weakness or sensitivity.",
+                    "Id": 313
+                  },
+                  "Primary": {
+                    "Phrase": "Communication difficulties. Struggle to express desires.",
+                    "Id": 292
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "10.25"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.15",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "7.93"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.71",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "56.73"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "86.30",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "20.33"
+              }
+            },
+            "duration": 13620,
+            "offset": 2243126
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Talkativeness, extroversion.",
+                    "Id": 314
+                  },
+                  "Primary": {
+                    "Phrase": "Pompous. Over excitement. Communication of an empowering feeling.",
+                    "Id": 320
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "3.71"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.24",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "2.68"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.03",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "88.92"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.14",
+                  "Mode": "low"
+                },
+                "Group": "medium",
+                "Value": "27.21"
+              }
+            },
+            "duration": 20810,
+            "offset": 2256756
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Action to achieve goal from a position of weakness and conviction.",
+                    "Id": 325
+                  },
+                  "Primary": {
+                    "Phrase": "Expression of sensitivity. Disappointment.",
+                    "Id": 316
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "46.16"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.33",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.29"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.33",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "84.02"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.33",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": 15
+              }
+            },
+            "duration": 16010,
+            "offset": 2280266
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Sense of uncertainty.",
+                    "Id": 388
+                  },
+                  "Primary": {
+                    "Phrase": "Hopes and dreams. Disappointment possible.",
+                    "Id": 328
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "15.11"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.42",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.75"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.63",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "68.57"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.53",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "21.63"
+              }
+            },
+            "duration": 27740,
+            "offset": 2374516
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Need to cope with lack of confidence.",
+                    "Id": 61
+                  },
+                  "Primary": {
+                    "Phrase": "Disappointment, feeling of missed opportunity, possibly longing.",
+                    "Id": 100
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.51",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "0.83"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.92",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "70.31"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.71",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "19.08"
+              }
+            },
+            "duration": 27340,
+            "offset": 2402266
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Need for communication and dependence on warm and supportive interpersonal contact.",
+                    "Id": 58
+                  },
+                  "Primary": {
+                    "Phrase": "Communication from conviction/belief.",
+                    "Id": 349
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "19.80"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.59",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "3.68"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "78.21",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "74.81"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.90",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "20.30"
+              }
+            },
+            "duration": 23720,
+            "offset": 2429616
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Sense of distress.",
+                    "Id": 136
+                  },
+                  "Primary": {
+                    "Phrase": "Communication difficulties.",
+                    "Id": 301
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": 0
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.67",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "12.70"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "78.48",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "87.50"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "86.08",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "19.47"
+              }
+            },
+            "duration": 24060,
+            "offset": 2455276
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Yearning for contact. Seeking harmony.",
+                    "Id": 268
+                  },
+                  "Primary": {
+                    "Phrase": "Longing, anticipation, fear. Possibly regret.",
+                    "Id": 220
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Leadership, Charisma",
+                    "Id": 6
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "26.31"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.75",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "8.16"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.50",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "46.15"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "86.25",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "14.07"
+              }
+            },
+            "duration": 23410,
+            "offset": 2479346
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Thrill seeking. Passionate communication. Flirting.",
+                    "Id": 296
+                  },
+                  "Primary": {
+                    "Phrase": "Positive communication. Emphasis on developed verbal ability.",
+                    "Id": 23
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Love, Happiness",
+                    "Id": 8
+                  },
+                  "Primary": {
+                    "Phrase": "Friendly, Warm",
+                    "Id": 4
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "65.63"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "92.59",
+                  "Mode": "low"
+                },
+                "Group": "high",
+                "Value": "85.59"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.78",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "73.59"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.19",
+                  "Mode": "low"
+                },
+                "Group": "medium",
+                "Value": "47.09"
+              }
+            },
+            "duration": 18170,
+            "offset": 2503616
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Talkativeness from a point of weakness or sensitivity.",
+                    "Id": 313
+                  },
+                  "Primary": {
+                    "Phrase": "Longing, loneliness.",
+                    "Id": 289
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "58.04"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "92.68",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "0.91"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "78.05",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": 100
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.37",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "22.50"
+              }
+            },
+            "duration": 19470,
+            "offset": 2521956
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Fear of expressing strong emotions.",
+                    "Id": 304
+                  },
+                  "Primary": {
+                    "Phrase": "Sense of mission and goal-oriented, mixed with concern. \"Butterflies\".",
+                    "Id": 358
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  },
+                  "Primary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "0.14"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "92.77",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "7.47"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.11",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "59.36"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.54",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "14.24"
+              }
+            },
+            "duration": 34260,
+            "offset": 2544476
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Hidden or unexpressed emotions.",
+                    "Id": 343
+                  },
+                  "Primary": {
+                    "Phrase": "Sadness and hope.",
+                    "Id": 391
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Self-Control, Practicality",
+                    "Id": 10
+                  },
+                  "Primary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "7.25"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "92.86",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "6.13"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.38",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "93.75"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.71",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "15.03"
+              }
+            },
+            "duration": 25040,
+            "offset": 2578746
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Loneliness, fatigue, emotional frustration.",
+                    "Id": 79
+                  },
+                  "Primary": {
+                    "Phrase": "Communication from disappointment and sensitivity. Vulnerability, pain or bitterness.",
+                    "Id": 277
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Defensivness, Anxiety",
+                    "Id": 3
+                  },
+                  "Primary": {
+                    "Phrase": "Sadness, Sorrow",
+                    "Id": 9
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "26.17"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "92.94",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "2.29"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "77.65",
+                  "Mode": "positive"
+                },
+                "Group": "positive",
+                "Value": "94.79"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "85.88",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "11.18"
+              }
+            },
+            "duration": 44750,
+            "offset": 2603796
+          },
+          {
+            "analysis": {
+              "Mood": {
+                "Composite": {
+                  "Secondary": {
+                    "Phrase": "Hopes and dreams. Disappointment possible.",
+                    "Id": 328
+                  },
+                  "Primary": {
+                    "Phrase": "Talkativeness from a point of weakness or sensitivity.",
+                    "Id": 313
+                  }
+                },
+                "Group11": {
+                  "Secondary": {
+                    "Phrase": "Creative, Passionate",
+                    "Id": 1
+                  },
+                  "Primary": {
+                    "Phrase": "Loneliness, Unfulfillment",
+                    "Id": 7
+                  }
+                }
+              },
+              "AudioQuality": {
+                "Value": "14.64"
+              },
+              "Arousal": {
+                "Summary": {
+                  "ModePct": "93.02",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "10.75"
+              },
+              "Valence": {
+                "Summary": {
+                  "ModePct": "76.74",
+                  "Mode": "positive"
+                },
+                "Group": "neutral",
+                "Value": "35.29"
+              },
+              "Temper": {
+                "Summary": {
+                  "ModePct": "86.05",
+                  "Mode": "low"
+                },
+                "Group": "low",
+                "Value": "10.61"
+              }
+            },
+            "duration": 26500,
+            "offset": 2651586
+          }
+        ],
+        "sessionStatus": "Done",
+        "duration": "2699590.13"
+      },
+      "status": "success"
+    },
+    "created": {
+      "$date": "2016-07-04T08:55:42.476+0000"
+    },
+    "__v": 0
+  }
+]
