@@ -4,9 +4,18 @@ header {
     padding: 10px;
 }
 
+#videoContainer {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
 #audioContainer {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .table {
     width: 100%;

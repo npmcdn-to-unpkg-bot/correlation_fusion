@@ -6,7 +6,7 @@ function log () {
     console.log(arguments);
 }
 
-var app = angular.module('myAPP', ['ng', 'ngMaterial', 'ngMdIcons', 'filters.client', 'controllers.client']);
+var app = angular.module('myAPP', ['ng', 'ngMaterial', 'ngMdIcons', 'filters.client', 'controllers.client', 'md.data.table']);
 
 app.factory('d3', function () {
     return d3;
@@ -240,12 +240,26 @@ app.directive('moodMapChart', function () {
             //   $scope.mood.bMoodMapClicked = true;
             // });
 
+            function pointPosition(array) {
+                if (array[0] >= 0 && array[1] >= 0) {
+                    return '#1B5E20';
+                }
+                if (array[0] >= 0 && array[1] < 0) {
+                    return '#AA00FF';
+                }
+                if (array[0] < 0 && array[1] >= 0) {
+                    return '#607D8B';
+                }
+                if (array[0] < 0 && array[1] < 0) {
+                    return '#795548';
+                }
+            }
+
             var div = d3.select('body').append('div')
                 .attr('class', 'tooltip')
                 .style('opacity', 0);
 
             // plot points on the moodMap
-
             function _plotMoodsPoints (arrayMoods) {
 
                 svg
@@ -270,7 +284,7 @@ app.directive('moodMapChart', function () {
                     .enter()
                     .append('circle')
                     .attr('cx', function (d) { return xScale(d[0]); })
-                    .style('fill', 'black')
+                    .style('fill', function (d) { return pointPosition(d); })
                     .attr('cy', function (d) { return yScale(d[1]); })
                     .attr('r', 5)
                     .on('mouseover', function (d) {
@@ -279,8 +293,9 @@ app.directive('moodMapChart', function () {
                             .style('opacity', .9);
 
                         var emotionName = d[2] ? '<br/>' + d[2].toString() : '';
+                        emotionName += d[3] ? '<br/>' + d[3] : '';
+                        emotionName += d[4] ? ' - ' +  d[4] : '';
 
-                        console.log('emotionName====',d[2], emotionName);
                         div.html(roundFilter(d[0] * 100) + ', ' + roundFilter(d[1] * 100) + '' + emotionName)
                             .style('left', (d3.event.pageX) + 'px')
                             .style('top', (d3.event.pageY - 30) + 'px');
@@ -294,7 +309,7 @@ app.directive('moodMapChart', function () {
                             .duration(500)
                             .style('opacity', 0);
                         d3.select(this)
-                            .style('fill', function (d) {return 'black'}).transition()
+                            .style('fill', function (d) { return pointPosition(d); }).transition()
                             .duration(100).attr('r', function (d) {return 5});
                     });
             }

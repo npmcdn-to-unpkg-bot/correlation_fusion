@@ -2,7 +2,7 @@
 
 var controllers = angular.module('controllers.client', []);
 
-controllers.controller('MainCtrl', function ($scope, $http, $mdToast) {
+controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundFilter) {
         $scope.spSessions = [];
         //$scope.selfReportedEmotions = [];
         $scope.selectedSpSessions = [];
@@ -48,11 +48,15 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast) {
                 {'emotion_name': 'HAPPINESS', 'valence': 68, 'arousal': 7},
                 {'emotion_name': 'SADNESS', 'valence': -68, 'arousal': -35},
                 {'emotion_name': 'NEUTRAL', 'valence': 0, 'arousal': 0},
-                {'emotion_name': 'SURPRISE', 'valence': 30, 'arousal': 8}];
+                {'emotion_name': 'SURPRISE', 'valence': 30, 'arousal': 8},
+                {'emotion_name': 'CONTEMPT', 'valence': -55, 'arousal': 43}
+        ];
 
         // initialization
         _init();
 
+        // loading json data
+        // --------------------
         function _init () {
             // load self reported json data
             async.waterfall([
@@ -96,8 +100,25 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast) {
                     console.log(err);
                     return;
                 }
-                console.log('$scope.audioEmotions', data);
                 $scope.audioEmotions = data;
+            });
+
+            // start loading videos json data
+            async.waterfall([
+                function (callback) {
+                    $http.get('./data/emovideos.json').then(function (res) {
+                        $scope.videoEmotions = res.data;
+                        callback(null, $scope.videoEmotions);
+                    }, function (err) {
+                        callback(err);
+                    });
+                }
+            ], function (err, data) {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                $scope.videoEmotions = data;
             });
         }
 
@@ -181,6 +202,33 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast) {
             }
         };
 
+        function _propPaisWiseArgmax(object) {
+            var vals = _.values(object);
+            var keys  =_.keys(object);
+            var max = _.max(vals);
+            return [keys[_.indexOf(vals, max)].toUpperCase(), max];
+        }
+
+        function _getEmotionsFromVideoJsonData (jsonData, spSession) {
+
+            var videoemotions = _.where(jsonData, {'sp_session': {'$oid': spSession}});
+            videoemotions = _.first(videoemotions);
+
+            var res = _.map(videoemotions.video_emotion_scores, function(item) {
+                var _max = _propPaisWiseArgmax(item.scores);
+                var matchedValenceArousal = _.where(valenceArousalMappingTable, {'emotion_name': _max[0]});
+                return [_.first(_.pluck(matchedValenceArousal, 'valence')) / 100.00, _.first(_.pluck(matchedValenceArousal, 'arousal')) / 100.00].concat(_max);
+            });
+
+            console.log('videoemotions res', res);
+
+            return res;
+        }
+
+        // scale VB emotions as arousal & valence are between 0 and 100
+        var scale = d3.scale.linear();
+        scale.domain([0, 100]);
+        scale.range([-100, 100]);
         $scope.applyFilter = function () {
             if (_.size($scope.selectedSpSessions) === 0) {
                 $scope.showSimpleToast('Please select a session!');
@@ -233,19 +281,38 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast) {
                 $scope.moodPoints = mood;
             });
 
-            $scope.bShowTtable = false;
             // display audio emotions
+            // -----------------------
+            $scope.bShowTtable = false;
             var audioEmotions = _.where($scope.audioEmotions, {'sp_session': {'$oid': $scope.selectedSpSessions}});
             audioEmotions = _.first(audioEmotions);
             if (audioEmotions) {
                 $scope.bShowTtable = true;
-                jTotable(audioEmotions['audio_emotion_scores'], 'finishtable');
+                $scope.jTotableAudioEmotions = audioEmotions['audio_emotion_scores'];
+
+                // FIXME-EMOVIZ remove this from here
+                var audioValenceArousalBySegment = [];
+                _.forEach($scope.jTotableAudioEmotions.result.analysisSegments, function (sig) {
+                    var from = sig.offset;
+                    from = new Date(from);
+                    from = TimeTostr(from);
+
+                    var to = new Date(Number(sig.duration) + sig.offset);
+                    to = TimeTostr(to);
+
+                    audioValenceArousalBySegment.push([scale(sig.analysis.Valence.Value) / 100.00, scale(sig.analysis.Arousal.Value) / 100.00, '', from, to]);
+                });
+
+                $scope.audioValenceArousalBySegment = audioValenceArousalBySegment;
+                console.log('$scope.audioValenceArousalBySegment', $scope.audioValenceArousalBySegment)
             } else {
                 $scope.bShowTtable = false;
             }
 
             // project discrete emotions
             $scope.applyProjectDiscreteEmotions();
+
+            $scope.videoEmotionsForMoodMap = _getEmotionsFromVideoJsonData($scope.videoEmotions, $scope.selectedSpSessions);
         };
 
         $scope.mood = {
@@ -267,7 +334,6 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast) {
             );
             originatorEv = null;
         };
-
 
         function jTotable (json, tblName) {
 

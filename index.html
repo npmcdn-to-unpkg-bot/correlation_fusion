@@ -6,6 +6,7 @@
     <link rel="stylesheet"
           href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material-data-table/0.10.8/md-data-table.min.css"/>
 </head>
 
 <body ng-controller='MainCtrl'>
@@ -69,26 +70,62 @@
 
 </div>
 
-<header>Audio:</header>
-<div id="audioContainer">
-    <table class="table table-responsive" id="finishtable">
-        <thead>
-        <tr>
-            <th>From</th>
-            <th>To</th>
-            <th>Duration</th>
-            <th>Temper</th>
-            <th>Valence</th>
-            <th>Arousal</th>
-            <!--<th>Group11</th>
-            <th>Composite</th>-->
-        </tr>
-        </thead>
-        <tbody ng-show="bShowTtable"></tbody>
-    </table>
-</div>
+<div layout="row">
+    <div flex="50">
+        <header>Audio:</header>
+        <div id="audioContainer" class="emoviz-selfreported-styles">
+            <div class="element">
+                <div id="mood-map-chart">
+                    <mood-map-chart mood-points="audioValenceArousalBySegment" data="mood" check-point=''
+                                    change-handler=""></mood-map-chart>
+                </div>
+            </div>
 
-<header>Video:</header>
+            <div class="element">
+                <md-table-container>
+                    <table md-table>
+                        <thead md-head>
+                        <tr md-row>
+                            <th md-column>From</th>
+                            <th md-column>To</th>
+                            <th md-column>Duration</th>
+                            <!--<th md-column>Temper</th>-->
+                            <th md-column>Valence</th>
+                            <th md-column>Arousal</th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row ng-repeat="sig in jTotableAudioEmotions.result.analysisSegments">
+                            <td md-cell>{{sig.offset | timeToDate | timeToStr}}</td>
+                            <td md-cell>{{((sig.duration | strToNumber)  + sig.offset) | timeToDate | timeToStr }}</td>
+                            <td md-cell>{{sig.duration | strToNumber | timeToDate | timeToStr }}</td>
+                            <!--<td md-cell>{{sig.analysis.Temper.Group + ' : ' + sig.analysis.Temper.Value}}</td>-->
+                            <td md-cell>{{sig.analysis.Valence.Group + ' : ' + (sig.analysis.Valence.Value | scale | round) }}</td>
+                            <td md-cell>{{sig.analysis.Arousal.Group + ' : ' + (sig.analysis.Arousal.Value  | scale | round)}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+            </div>
+        </div>
+    </div>
+
+    <div flex="50">
+        <header>Video:</header>
+        <div id="videoContainer" class="emoviz-selfreported-styles">
+            <div class="element">
+                <div id="mood-map-chart">
+                    <mood-map-chart mood-points="videoEmotionsForMoodMap" data="mood" check-point=''
+                                    change-handler=""></mood-map-chart>
+                </div>
+            </div>
+
+            <div class="element">
+
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
@@ -106,6 +143,8 @@
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/async/1.5.2/async.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simple-statistics/1.0.1/simple_statistics.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-data-table/0.10.8/md-data-table.min.js"></script>
 
 <script src="filters.client.js"></script>
 <script src="controllers.client.js"></script>
