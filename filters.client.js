@@ -50,3 +50,44 @@ filters.filter('scale', function (d3) {
         return scale(nbr);
     };
 });
+
+filters.filter('emotionArgmax', function () {
+    return function (screenshotsBySeg) {
+       return  _.map(screenshotsBySeg, function (screenshotItem) {
+            return _propPaisWiseArgmax(screenshotItem.scores)
+        })
+    };
+});
+
+filters.filter('emotionArgmaxCombine', function () {
+    return function (emotionArgmax) {
+        var groupedEmotions = {}
+        _.forEach(emotionArgmax, function (array) {
+            (groupedEmotions[array[0]] = groupedEmotions[array[0]] || []).push(array[1]);
+        });
+
+        return _.map(groupedEmotions, function (val, key) {
+            return {emotion: key, mean_value: _.sum(val) / _.size(val), frequency: _.size(val) }
+        });
+
+        //return groupedEmotions;
+    };
+});
+
+// Frequent
+filters.filter('emotionArgmaxCombineFrequent', function () {
+    return function (emotionArgmaxCombine) {
+        var frequentEmotion = _.max(emotionArgmaxCombine, function (emotion) {
+            return emotion.frequency;
+        });
+
+        return _.where(emotionArgmaxCombine, {frequency: frequentEmotion.frequency});
+    };
+});
+
+function _propPaisWiseArgmax (object) {
+    var vals = _.values(object);
+    var keys = _.keys(object);
+    var max = _.max(vals);
+    return [ keys[ _.indexOf(vals, max) ].toUpperCase(), max ];
+}

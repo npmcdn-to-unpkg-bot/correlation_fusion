@@ -6,7 +6,9 @@
     <link rel="stylesheet"
           href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material-data-table/0.10.8/md-data-table.min.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/angular-material-data-table/0.10.8/md-data-table.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-chart/2.0.27/LineChart.min.css"/>
 </head>
 
 <body ng-controller='MainCtrl'>
@@ -31,13 +33,13 @@
     </div>
 
     <div class="element">
-        <md-switch ng-model="startEndSwitcher" aria-label="Switch 2" ng-true-value="'START'" ng-false-value="'END'">
+        <md-switch ng-model="startEndSwitcher" ng-true-value="'START'" ng-false-value="'END'">
             Check point: {{ startEndSwitcher }}
         </md-switch>
     </div>
 
     <div class="element">
-        <md-button class="md-raised md-primary" ng-click="applyFilter()">
+        <md-button class="md-raised md-primary" aria-label=".." ng-click="applyFilter()">
             Filtre
         </md-button>
     </div>
@@ -72,7 +74,7 @@
 
 <div layout="row">
     <div flex="50">
-        <header>Audio:</header>
+        <header>Audio: {{ audioValenceArousalBySegment.length }}</header>
         <div id="audioContainer" class="emoviz-selfreported-styles">
             <div class="element">
                 <div id="mood-map-chart">
@@ -97,11 +99,15 @@
                         <tbody md-body>
                         <tr md-row ng-repeat="sig in jTotableAudioEmotions.result.analysisSegments">
                             <td md-cell>{{sig.offset | timeToDate | timeToStr}}</td>
-                            <td md-cell>{{((sig.duration | strToNumber)  + sig.offset) | timeToDate | timeToStr }}</td>
+                            <td md-cell>{{((sig.duration | strToNumber) + sig.offset) | timeToDate | timeToStr }}</td>
                             <td md-cell>{{sig.duration | strToNumber | timeToDate | timeToStr }}</td>
                             <!--<td md-cell>{{sig.analysis.Temper.Group + ' : ' + sig.analysis.Temper.Value}}</td>-->
-                            <td md-cell>{{sig.analysis.Valence.Group + ' : ' + (sig.analysis.Valence.Value | scale | round) }}</td>
-                            <td md-cell>{{sig.analysis.Arousal.Group + ' : ' + (sig.analysis.Arousal.Value  | scale | round)}}</td>
+                            <td md-cell>{{sig.analysis.Valence.Group + ' : ' + (sig.analysis.Valence.Value | scale |
+                                round) }}
+                            </td>
+                            <td md-cell>{{sig.analysis.Arousal.Group + ' : ' + (sig.analysis.Arousal.Value | scale |
+                                round)}}
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -116,16 +122,47 @@
             <div class="element">
                 <div id="mood-map-chart">
                     <mood-map-chart mood-points="videoEmotionsForMoodMap" data="mood" check-point=''
-                                    change-handler=""></mood-map-chart>
+                                    change-handler="">
+                    </mood-map-chart>
                 </div>
             </div>
 
             <div class="element">
-
+                <md-table-container>
+                    <table md-table>
+                        <thead md-head>
+                        <tr md-row>
+                            <th md-column>Image Nbr</th>
+                            <th md-column>Argmax Emotions</th>
+                            <th md-column>Argmax Valence / Arousal</th>
+                            <th md-column>Mean Emotion</th>
+                            <th md-column>Mean Valence / Arousal</th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row ng-repeat="(key, vItems) in screenshotsOfAudioSegment">
+                            <td md-cell>{{vItems.length}}</td>
+                            <td md-cell>{{one = (vItems | emotionArgmax | emotionArgmaxCombine)}}</td>
+                            <td md-cell>{{one | emotionArgmaxCombineFrequent}}</td>
+                            <td md-cell>{{key}}</td>
+                            <td md-cell>{{key}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
             </div>
         </div>
     </div>
 </div>
+
+
+</div>
+
+
+<!--<div id="mood-map-chart">
+    <discrete-emotions-scatter-chart mood-points="data.dataset0" data="mood" check-point=''
+    ></discrete-emotions-scatter-chart>
+</div>-->
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
@@ -143,9 +180,12 @@
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/async/1.5.2/async.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/simple-statistics/1.0.1/simple_statistics.min.js"></script>
+<script src="https://npmcdn.com/simple-statistics@2.0.0/dist/simple-statistics.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-data-table/0.10.8/md-data-table.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/line-chart/2.0.27/LineChart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
 
+<script src="./libs/lodash-mixin.js"></script>
 <script src="filters.client.js"></script>
 <script src="controllers.client.js"></script>
 <script src="script.js"></script>
