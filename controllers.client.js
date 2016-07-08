@@ -2,7 +2,7 @@
 
 var controllers = angular.module('controllers.client', []);
 
-controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundFilter, $log) {
+controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundFilter, $log, scaleFilter, emotionSumFilter, emotionSumGroupFilter, emotionArgmaxFilter, emotionArgmaxReduceFilter, emotionArgmaxCombineFrequentFilter, emotionWeightedMeanFilter) {
 
     $scope.spSessions = [];
     //$scope.selfReportedEmotions = [];
@@ -44,14 +44,14 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
         } ];
 
     var valenceArousalMappingTable = [
-        { 'emotion_name': 'ANGER', 'valence': -37, 'arousal': 47 },
-        { 'emotion_name': 'FEAR', 'valence': -61, 'arousal': 7 },
-        { 'emotion_name': 'HAPPINESS', 'valence': 68, 'arousal': 7 },
-        { 'emotion_name': 'SADNESS', 'valence': -68, 'arousal': -35 },
-        { 'emotion_name': 'NEUTRAL', 'valence': 0, 'arousal': 0 },
-        { 'emotion_name': 'SURPRISE', 'valence': 30, 'arousal': 8 },
-        { 'emotion_name': 'CONTEMPT', 'valence': -55, 'arousal': 43 },
-        { 'emotion_name': 'DISGUST', 'valence': -68, 'arousal': 20 }
+        { 'emotion_name': 'ANGER', 'valence': -37, 'arousal': 47, dim: 'np' },
+        { 'emotion_name': 'FEAR', 'valence': -61, 'arousal': 7, dim: 'np' },
+        { 'emotion_name': 'HAPPINESS', 'valence': 68, 'arousal': 7, dim: 'pp' },
+        { 'emotion_name': 'SADNESS', 'valence': -68, 'arousal': -35, dim: 'nn' },
+        { 'emotion_name': 'NEUTRAL', 'valence': 0, 'arousal': 0, dim: 'pp' },
+        { 'emotion_name': 'SURPRISE', 'valence': 30, 'arousal': 8, dim: 'pp' },
+        { 'emotion_name': 'CONTEMPT', 'valence': -55, 'arousal': 43, dim: 'np' },
+        { 'emotion_name': 'DISGUST', 'valence': -68, 'arousal': 20, dim: 'np' }
     ];
 
     // initialization
@@ -75,6 +75,9 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
                 var sp_sessions = _.sortBy(data, 'created.$date');
                 sp_sessions = _.map(sp_sessions, _.partialRight(_.pick, 'sp_session'));
                 sp_sessions = _.uniq(_.pluck(sp_sessions, 'sp_session.$oid'));
+                /*sp_sessions = _.remove(sp_sessions , function(session) {
+                    return session !== '575ef103f1a57a61252b4fe7';
+                });*/
                 callback(null, data, sp_sessions);
             }
         ], function (err, data, sessions) {
@@ -210,10 +213,10 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
         // get positive points with weights
         var weightsPoisitivesPoints = { points: [], weights: [] };
         _.forEach(projectedPoints, function (item) {
-            if (item[ 0 ] > 0 && item[ 1 ] > 0) {
+            //if (item[ 0 ] > 0 && item[ 1 ] > 0) {
                 weightsPoisitivesPoints[ 'points' ].push([ item[ 0 ], item[ 1 ] ]);
                 weightsPoisitivesPoints[ 'weights' ].push(item[ 3 ]);
-            }
+            ///}
         });
         // normalize weights
         var W = _.map(weightsPoisitivesPoints[ 'weights' ], function (w) {
@@ -262,6 +265,7 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
     scale.domain([ 0, 100 ]);
     scale.range([ -100, 100 ]);
     $scope.applyFilter = function () {
+
         if (_.size($scope.selectedSpSessions) === 0) {
             $scope.showSimpleToast('Please select a session!');
             return;
@@ -344,7 +348,8 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
 
         $scope.videoEmotionsForMoodMap = _getEmotionsFromVideoJsonData($scope.videoEmotions, $scope.selectedSpSessions);
 
-        _plotVideoEmotionsLineChart($scope.videoEmotions, $scope.selectedSpSessions);
+        // _plotVideoEmotionsLineChart($scope.videoEmotions, $scope.selectedSpSessions);
+        _plotAudioEmotionsLineChart($scope.audioEmotions, $scope.selectedSpSessions);
 
         // FIXME-EMOVIZ 
         $scope.screenshotsOfAudioSegment = _getScreenshotsOfAudioSegment($scope.audioEmotions, 4, $scope.videoEmotions, $scope.selectedSpSessions)
@@ -486,7 +491,7 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
             start = end + 1;
         });
 
-        console.log('$$$ screenshotsOrderedByAudioSegments', screenshotsOrderedByAudioSegments);
+        // console.log('$$$ screenshotsOrderedByAudioSegments', screenshotsOrderedByAudioSegments);
     }
 
 
@@ -496,7 +501,7 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
         videoEmotions = _.first(videoEmotions);
         videoEmotions = _.get(videoEmotions, 'video_emotion_scores');
 
-        console.log('$$$ videoEmotions', videoEmotions);
+        // console.log('$$$ videoEmotions', videoEmotions);
 
         var audioEmotions = _.where(audioJsonData, { 'sp_session': { '$oid': spSession } });
         audioEmotions = _.first(audioEmotions);
@@ -507,7 +512,7 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
 
             // compute screenshot time position
             // get screenshot number
-            var screenshotNbr = Number(vItem['screenshot'].slice(10).replace('-cropped.jpg', ''));
+            var screenshotNbr = Number(vItem[ 'screenshot' ].slice(10).replace('-cropped.jpg', ''));
             var screenshotTimePosition = ((screenshotNbr * interval) - interval) * 1000;
 
             _.forEach(audioEmotions.result.analysisSegments, function (oItem, index) {
@@ -516,10 +521,10 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
                 var oSegTimeStart = oItem.offset;
 
                 if (screenshotTimePosition >= oSegsTimeEnd) {
-                    (screenshotBySegs[_.size(audioEmotions.result.analysisSegments)-  1] = (screenshotBySegs[_.size(audioEmotions.result.analysisSegments)-  1] || [])).push(vItem);
+                    (screenshotBySegs[ _.size(audioEmotions.result.analysisSegments) - 1 ] = (screenshotBySegs[ _.size(audioEmotions.result.analysisSegments) - 1 ] || [])).push(vItem);
                     return false;
                 } else if (screenshotTimePosition >= oSegTimeStart && screenshotTimePosition <= oSegTimeEnd) {
-                    (screenshotBySegs[index] = (screenshotBySegs[index] || [])).push(vItem);
+                    (screenshotBySegs[ index ] = (screenshotBySegs[ index ] || [])).push(vItem);
                     return false;
                 }
             })
@@ -535,7 +540,7 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
 
         _.mapValues(screenshotBySegs, function (item) {
 
-            _.map(item,function (screenshotItem) {
+            _.map(item, function (screenshotItem) {
                 return _propPaisWiseArgmax(screenshotItem.scores)
             })
 
@@ -543,6 +548,226 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
 
     }
 
+    $scope.showIt = true;
+
+    function _plotAudioEmotionsLineChart (jsonData, spSession) {
+
+        $scope.showIt = true;
+
+        if ($scope.selectedSpSessions === '575ef103f1a57a61252b4fe7') {
+            $scope.showIt = false;
+        }
+
+
+        var valenceArousalAsPosNegNeu = {
+            'positive': 100,
+            'negative': -100,
+            'neutral': 0,
+            'low': -100,
+            'high': 100
+        };
+
+        var valenceArousalAsPosNeg = {
+            'positive': 100,
+            'negative': -100,
+            'neutral': 100,
+            'low': -100,
+            'high': 100
+        };
+
+        var resVA = [];
+        var resPosNegNeu = [];
+        var resPosNeg = [];
+        var resPosNegNeuArousal = [];
+        var resMeanStrategy = [];
+
+        var audioemotions = _.where(jsonData, { 'sp_session': { '$oid': spSession } });
+        audioemotions = _.first(audioemotions);
+
+        if (!audioemotions) {
+            return resVA;
+        }
+        resVA = _.map(audioemotions.audio_emotion_scores.result.analysisSegments, function (seg, index1) {
+            return {
+                x: index1,
+                valence: roundFilter(scaleFilter(seg.analysis.Valence.Value)),
+                arousal: roundFilter(scaleFilter(seg.analysis.Arousal.Value))
+            };
+        });
+
+        resPosNegNeu = _.map(audioemotions.audio_emotion_scores.result.analysisSegments, function (seg, index) {
+            return {
+                x: index,
+                valence: valenceArousalAsPosNegNeu[ seg.analysis.Valence.Group ],
+                arousal: valenceArousalAsPosNegNeu[ seg.analysis.Arousal.Group ]
+            };
+        });
+
+        resPosNeg = _.map(audioemotions.audio_emotion_scores.result.analysisSegments, function (seg, index2) {
+            return {
+                x: index2,
+                valence: valenceArousalAsPosNeg[ seg.analysis.Valence.Group ],
+                arousal: valenceArousalAsPosNeg[ seg.analysis.Arousal.Group ]
+            };
+        });
+
+        var valence = 0;
+        var screenshotsBySeg = _getScreenshotsOfAudioSegment($scope.audioEmotions, 4, $scope.videoEmotions, $scope.selectedSpSessions);
+
+        var valenceArousal = {};
+        _.forEach(screenshotsBySeg, function (vItems, index) {
+            // strategy sum pos > neg
+            valence = (emotionSumGroupFilter(emotionSumFilter(vItems))[ 'pos' ] >= emotionSumGroupFilter(emotionSumFilter(vItems))[ 'neg' ]) ? 1 : -1;
+            resPosNegNeuArousal.push({ x: Number(index), valence: valence * 100 });
+
+            // strategy mean
+            valenceArousal = emotionArgmaxFilter(vItems);
+            valenceArousal = emotionArgmaxReduceFilter(valenceArousal);
+            valenceArousal = emotionArgmaxCombineFrequentFilter(valenceArousal);
+            valenceArousal = emotionWeightedMeanFilter(valenceArousal);
+
+            resMeanStrategy.push({
+                x: Number(index),
+                valence: _.get(valenceArousal, 'valence'),
+                arousal: _.get(valenceArousal, 'arousal')
+            });
+        });
+
+        // map resMeanStrategy to moodmap
+        var resMeanStrategyMoodMap = _.map(resMeanStrategy, function (item) {
+            return [item.valence / 100.00, item.arousal / 100.00, '', ''];
+        });
+        
+        $scope.audiodata = {
+            dataset0: [
+                //{ x: 0, valence: 0, arousal: 0 },
+            ].concat(resVA),
+            dataset1: [
+                //{ x: 0, valence: 0, arousal: 0 },
+            ].concat(resPosNegNeu),
+            dataset2: [
+                //{ x: 0, valence: 0 },
+            ].concat(resPosNegNeuArousal),
+            dataset3: [
+                //{ x: 0, valence: 0 },
+            ].concat(resPosNeg),
+            dataset4: [
+                //{ x: 0, valence: 0 },
+            ].concat(resMeanStrategy),
+            dataset5: resMeanStrategyMoodMap
+        };
+
+        $scope.audiooptionsVA = {
+            series: [
+                {
+                    axis: "y",
+                    dataset: "dataset0",
+                    key: "valence",
+                    label: "Valence Audio",
+                    color: "#FFD600",
+                    type: [ 'line', 'dot' ],
+                    id: 'mySeries0'
+                },
+                {
+                    axis: "y",
+                    dataset: "dataset4",
+                    key: "valence",
+                    label: "Valence Video",
+                    color: "#64DD17",
+                    type: [ 'line', 'dot' ],
+                    id: 'mySeries00'
+                },
+                {
+                    axis: "y",
+                    dataset: "dataset0",
+                    key: "arousal",
+                    label: "Arousal Audio",
+                    color: "#01579B",
+                    type: [ 'line', 'dot' ],
+                    id: 'mySeries1'
+                },
+                {
+                    axis: "y",
+                    dataset: "dataset4",
+                    key: "arousal",
+                    label: "Arousal Video",
+                    color: "#00B8D4",
+                    type: [ 'line', 'dot' ],
+                    id: 'mySeries11'
+                }
+            ],
+            axes: { x: { key: "x" } }
+        };
+
+        $scope.audiooptionsPosNegNeu = {
+            series: [
+                {
+                    axis: "y",
+                    dataset: "dataset1",
+                    key: "valence",
+                    label: "Valence Audio",
+                    color: "#FFD600",
+                    type: [ 'line', 'dot' ],
+                    id: 'mySeries0'
+                },
+                {
+                    axis: "y",
+                    dataset: "dataset2",
+                    key: "valence",
+                    label: "Valence Video",
+                    color: "#64DD17",
+                    type: [ 'line', 'dot' ],
+                    id: 'mySeries2'
+                },
+                {
+                    axis: "y",
+                    dataset: "dataset1",
+                    key: "arousal",
+                    label: "Arousal Audio",
+                    color: "#01579B",
+                    type: [ 'line', 'dot' ],
+                    id: 'mySeries1'
+                }
+            ],
+            axes: { x: { key: "x" } }
+
+        };
+
+
+        $scope.audiooptionsPosNeg = {
+            series: [
+                {
+                    axis: "y",
+                    dataset: "dataset3",
+                    key: "valence",
+                    label: "Valence Audio",
+                    color: "#FFD600",
+                    type: [ 'line', 'dot' ],
+                    id: 'mySeries0'
+                },
+                {
+                    axis: "y",
+                    dataset: "dataset2",
+                    key: "arousal",
+                    label: "Valence Video",
+                    color: "#64DD17",
+                    type: [ 'line', 'dot' ],
+                    id: 'mySeries2'
+                },
+                {
+                    axis: "y",
+                    dataset: "dataset3",
+                    key: "arousal",
+                    label: "Arousal Audio",
+                    color: "#01579B",
+                    type: [ 'line', 'dot' ],
+                    id: 'mySeries1'
+                }
+            ],
+            axes: { x: { key: "x" } }
+        }
+
+    }
 
 
 });

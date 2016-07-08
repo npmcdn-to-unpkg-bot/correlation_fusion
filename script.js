@@ -625,7 +625,7 @@ app.directive('discreteEmotionsScatterChart', function () {
 
                         div.html(d.x + ', ' + roundFilter(d.surprise * 100))
                            .style('left', (d3.event.pageX) + 'px')
-                           .style('top', (d3.event.pageY - 30) + 'px');
+                           .style('top', (d3.event.pageY + 80) + 'px');
 
                         d3.select(this)
                           .style('fill', function (d) { return 'teal'}).transition()

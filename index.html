@@ -72,46 +72,44 @@
 
 </div>
 
-<div layout="row">
+<div id="audioVideoContainer" class="emoviz-selfreported-styles" ng-show="showIt">
+    <div class="element">
+        <header>Audio</header>
+        <div id="mood-map-chart">
+            <mood-map-chart mood-points="audioValenceArousalBySegment" data="mood" check-point=''
+                            change-handler=""></mood-map-chart>
+        </div>
+    </div>
+
+    <div class="element">
+        <header>Video disc. emo.:</header>
+        <div id="mood-map-chart">
+            <mood-map-chart mood-points="videoEmotionsForMoodMap" data="mood" check-point=''
+                            change-handler="">
+            </mood-map-chart>
+        </div>
+    </div>
+
+    <div class="element">
+        <header>Video A. V.:</header>
+        <div id="mood-map-chart">
+            <mood-map-chart mood-points="audiodata.dataset5" data="mood" check-point=''
+                            change-handler="">
+            </mood-map-chart>
+        </div>
+    </div>
+</div>
+
+
+<!--<div layout="row" layout-align="center" ng-show="showIt">
     <div flex="50">
-        <header>Audio: {{ audioValenceArousalBySegment.length }}</header>
+        <header>Audio</header>
         <div id="audioContainer" class="emoviz-selfreported-styles">
             <div class="element">
                 <div id="mood-map-chart">
                     <mood-map-chart mood-points="audioValenceArousalBySegment" data="mood" check-point=''
                                     change-handler=""></mood-map-chart>
                 </div>
-            </div>
-
-            <div class="element">
-                <md-table-container>
-                    <table md-table>
-                        <thead md-head>
-                        <tr md-row>
-                            <th md-column>From</th>
-                            <th md-column>To</th>
-                            <th md-column>Duration</th>
-                            <!--<th md-column>Temper</th>-->
-                            <th md-column>Valence</th>
-                            <th md-column>Arousal</th>
-                        </tr>
-                        </thead>
-                        <tbody md-body>
-                        <tr md-row ng-repeat="sig in jTotableAudioEmotions.result.analysisSegments">
-                            <td md-cell>{{sig.offset | timeToDate | timeToStr}}</td>
-                            <td md-cell>{{((sig.duration | strToNumber) + sig.offset) | timeToDate | timeToStr }}</td>
-                            <td md-cell>{{sig.duration | strToNumber | timeToDate | timeToStr }}</td>
-                            <!--<td md-cell>{{sig.analysis.Temper.Group + ' : ' + sig.analysis.Temper.Value}}</td>-->
-                            <td md-cell>{{sig.analysis.Valence.Group + ' : ' + (sig.analysis.Valence.Value | scale |
-                                round) }}
-                            </td>
-                            <td md-cell>{{sig.analysis.Arousal.Group + ' : ' + (sig.analysis.Arousal.Value | scale |
-                                round)}}
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </md-table-container>
             </div>
         </div>
     </div>
@@ -126,26 +124,89 @@
                     </mood-map-chart>
                 </div>
             </div>
+        </div>
+    </div>
+</div>-->
 
+<div layout="column">
+    <div flex>
+        <div class="my-chart" style="height: 300px" ng-show="showIt">
+            <linechart data="audiodata" options="audiooptionsVA"></linechart>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div flex>
+        <div class="my-chart" style="height: 300px" ng-show="showIt">
+            <linechart data="audiodata" options="audiooptionsPosNegNeu"></linechart>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <div flex>
+        <div class="my-chart" style="height: 300px" ng-show="showIt">
+            <linechart data="audiodata" options="audiooptionsPosNeg"></linechart>
+        </div>
+    </div>
+
+</div>
+
+<div layout="row">
+    <div flex="50">
+        <div id="audioContainerTab" class="emoviz-selfreported-styles">
             <div class="element">
-                <md-table-container>
+                <md-table-container ng-show="showIt">
                     <table md-table>
                         <thead md-head>
                         <tr md-row>
+                            <th md-column>Index</th>
+                            <th md-column>From-To</th>
+                            <th md-column>Duration</th>
+                            <th md-column>Valence</th>
+                            <th md-column>Arousal</th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row ng-repeat="(key, sig) in jTotableAudioEmotions.result.analysisSegments">
+                            <td md-cell>{{key}}</td>
+                            <td md-cell>{{sig.offset | timeToDate | timeToStr}}-{{((sig.duration | strToNumber) + sig.offset) | timeToDate | timeToStr }}</td>
+                            <td md-cell>{{sig.duration | strToNumber | timeToDate | timeToStr }}</td>
+                            <td md-cell>{{sig.analysis.Valence.Group + ' : ' + (sig.analysis.Valence.Value | scale | round) }} </td>
+                            <td md-cell>{{sig.analysis.Arousal.Group + ' : ' + (sig.analysis.Arousal.Value | scale | round)}} </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+            </div>
+        </div>
+    </div>
+
+    <div flex="50">
+        <div id="videoContainerTab" class="emoviz-selfreported-styles">
+            <div class="element">
+                <md-table-container ng-show="showIt">
+                    <table md-table>
+                        <thead md-head>
+                        <tr md-row>
+                            <!--<th md-column>Image Nbr</th>-->
                             <th md-column>Image Nbr</th>
-                            <th md-column>Argmax Emotions</th>
-                            <th md-column>Argmax Valence / Arousal</th>
-                            <th md-column>Mean Emotion</th>
-                            <th md-column>Mean Valence / Arousal</th>
+                            <th md-column>Reduce</th>
+                            <th md-column>Frequent</th>
+                            <th md-column>Mean</th>
+                            <th md-column>Sum</th>
+                            <th md-column>Group</th>
                         </tr>
                         </thead>
                         <tbody md-body>
                         <tr md-row ng-repeat="(key, vItems) in screenshotsOfAudioSegment">
+                            <!--<td md-cell>{{ key }}</td>-->
                             <td md-cell>{{vItems.length}}</td>
-                            <td md-cell>{{one = (vItems | emotionArgmax | emotionArgmaxCombine)}}</td>
+                            <td md-cell>{{one = (vItems | emotionArgmax | emotionArgmaxReduce)}}</td>
                             <td md-cell>{{one | emotionArgmaxCombineFrequent}}</td>
-                            <td md-cell>{{key}}</td>
-                            <td md-cell>{{key}}</td>
+                            <td md-cell>{{one | emotionArgmaxCombineFrequent | emotionWeightedMean}}</td>
+                            <td md-cell>{{two = (vItems | emotionSum)}}</td>
+                            <td md-cell>{{two | emotionSumGroup }}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -157,6 +218,7 @@
 
 
 </div>
+
 
 
 <!--<div id="mood-map-chart">
