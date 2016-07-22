@@ -98,8 +98,52 @@
             </mood-map-chart>
         </div>
     </div>
+
+    <div class="element">
+        <header>Video A. V. W.M. for each:</header>
+        <div id="mood-map-chart">
+            <mood-map-chart mood-points="videoData" data="mood" check-point=''
+                            change-handler="">
+            </mood-map-chart>
+        </div>
+    </div>
+
+    <div class="element">
+        <header>Video A. V. W.M. for each:</header>
+        <div id="mood-map-chart">
+            <mood-map-chart mood-points="videoData2" data="mood" check-point=''
+                            change-handler="">
+            </mood-map-chart>
+        </div>
+    </div>
 </div>
 
+<header style="padding: 10px">4 emotions histogram : Happy, Calm, Sad & Angry</header>
+
+<div id="audioVideoContainerColumnChart" class="emoviz-selfreported-styles" ng-show="showIt">
+    <div class="element">
+        <header>Audio</header>
+        <div class="my-chart" style="height: 300px" ng-show="showIt">
+            <linechart data="audioHistoData" options="audioHistoOpt"></linechart>
+        </div>
+    </div>
+
+    <div class="element">
+        <header>Video</header>
+        <div class="my-chart" style="height: 300px" ng-show="showIt">
+            <linechart data="audioHistoData" options="videoHistoOpt"></linechart>
+        </div>
+    </div>
+
+    <div class="element">
+        <header>Video</header>
+        <div class="my-chart" style="height: 300px" ng-show="showIt">
+            <linechart data="audioHistoData" options="videoHistoOpt2"></linechart>
+        </div>
+    </div>
+</div>
+
+<br><br>
 
 <!--<div layout="row" layout-align="center" ng-show="showIt">
     <div flex="50">
@@ -170,10 +214,16 @@
                         <tbody md-body>
                         <tr md-row ng-repeat="(key, sig) in jTotableAudioEmotions.result.analysisSegments">
                             <td md-cell>{{key}}</td>
-                            <td md-cell>{{sig.offset | timeToDate | timeToStr}}-{{((sig.duration | strToNumber) + sig.offset) | timeToDate | timeToStr }}</td>
+                            <td md-cell>{{sig.offset | timeToDate | timeToStr}}-{{((sig.duration | strToNumber) +
+                                sig.offset) | timeToDate | timeToStr }}
+                            </td>
                             <td md-cell>{{sig.duration | strToNumber | timeToDate | timeToStr }}</td>
-                            <td md-cell>{{sig.analysis.Valence.Group + ' : ' + (sig.analysis.Valence.Value | scale | round) }} </td>
-                            <td md-cell>{{sig.analysis.Arousal.Group + ' : ' + (sig.analysis.Arousal.Value | scale | round)}} </td>
+                            <td md-cell>{{sig.analysis.Valence.Group + ' : ' + (sig.analysis.Valence.Value | scale |
+                                round) }}
+                            </td>
+                            <td md-cell>{{sig.analysis.Arousal.Group + ' : ' + (sig.analysis.Arousal.Value | scale |
+                                round)}}
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -190,7 +240,8 @@
                         <thead md-head>
                         <tr md-row>
                             <!--<th md-column>Image Nbr</th>-->
-                            <th md-column>Image Nbr</th>
+                            <th md-column>Index</th>
+                            <th md-column>Images</th>
                             <th md-column>Reduce</th>
                             <th md-column>Frequent</th>
                             <th md-column>Mean</th>
@@ -201,10 +252,11 @@
                         <tbody md-body>
                         <tr md-row ng-repeat="(key, vItems) in screenshotsOfAudioSegment">
                             <!--<td md-cell>{{ key }}</td>-->
-                            <td md-cell>{{vItems.length}}</td>
+                            <td md-cell>{{key}}</td>
+                            <td md-cell>{{vItems}}</td>
                             <td md-cell>{{one = (vItems | emotionArgmax | emotionArgmaxReduce)}}</td>
                             <td md-cell>{{one | emotionArgmaxCombineFrequent}}</td>
-                            <td md-cell>{{one | emotionArgmaxCombineFrequent | emotionWeightedMean}}</td>
+                            <td md-cell>{{one | emotionWeightedMean}}</td>
                             <td md-cell>{{two = (vItems | emotionSum)}}</td>
                             <td md-cell>{{two | emotionSumGroup }}</td>
                         </tr>
@@ -218,7 +270,6 @@
 
 
 </div>
-
 
 
 <!--<div id="mood-map-chart">
@@ -247,6 +298,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/line-chart/2.0.27/LineChart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
 
+<script src="./node_modules/angular-file-saver/dist/angular-file-saver.bundle.min.js"></script>
 <script src="./libs/lodash-mixin.js"></script>
 <script src="filters.client.js"></script>
 <script src="controllers.client.js"></script>

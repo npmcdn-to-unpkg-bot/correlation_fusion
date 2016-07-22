@@ -6,7 +6,7 @@ function log () {
     console.log(arguments);
 }
 
-var app = angular.module('myAPP', [ 'ng', 'ngMaterial', 'ngMdIcons', 'filters.client', 'controllers.client', 'md.data.table', 'n3-line-chart' ]);
+var app = angular.module('myAPP', [ 'ng', 'ngMaterial', 'ngMdIcons', 'filters.client', 'controllers.client', 'md.data.table', 'n3-line-chart', 'ngFileSaver' ]);
 
 app.factory('d3', function () {
     return d3;
@@ -480,7 +480,7 @@ app.directive('discreteEmotionsScatterChart', function () {
             // -------------------------------------------------
             var svg = d3.select($element[ 0 ])
                         .append('svg')
-                        //.attr('class', 'svg-mood-map-chart');
+            //.attr('class', 'svg-mood-map-chart');
 
 
             var margin = {
@@ -525,7 +525,7 @@ app.directive('discreteEmotionsScatterChart', function () {
 
             var y_axis_g = svg.append('g')
                               .attr('class', 'axis')
-                              .attr('transform', 'translate(' + (margin.left)  + ',0)');
+                              .attr('transform', 'translate(' + (margin.left) + ',0)');
 
             y_axis_g.call(yAxis);
 
@@ -669,7 +669,7 @@ app.directive('discreteEmotionsScatterChart', function () {
                            .duration(500)
                            .style('opacity', 0);
                         d3.select(this)
-                          .style('fill', function (d,i) { return color(i); }).transition()
+                          .style('fill', function (d, i) { return color(i); }).transition()
                           .duration(100).attr('r', function (d) {return 3});
                     });
 
@@ -702,7 +702,7 @@ app.directive('discreteEmotionsScatterChart', function () {
                            .duration(500)
                            .style('opacity', 0);
                         d3.select(this)
-                          .style('fill', function (d,i) { return color(i); }).transition()
+                          .style('fill', function (d, i) { return color(i); }).transition()
                           .duration(100).attr('r', function (d) {return 3});
                     });
 
@@ -735,7 +735,7 @@ app.directive('discreteEmotionsScatterChart', function () {
                            .duration(500)
                            .style('opacity', 0);
                         d3.select(this)
-                          .style('fill', function (d,i) { return color(i); }).transition()
+                          .style('fill', function (d, i) { return color(i); }).transition()
                           .duration(100).attr('r', function (d) {return 3});
                     });
 
@@ -768,7 +768,7 @@ app.directive('discreteEmotionsScatterChart', function () {
                            .duration(500)
                            .style('opacity', 0);
                         d3.select(this)
-                          .style('fill', function (d,i) { return color(i); }).transition()
+                          .style('fill', function (d, i) { return color(i); }).transition()
                           .duration(100).attr('r', function (d) {return 3});
                     });
 
@@ -801,7 +801,7 @@ app.directive('discreteEmotionsScatterChart', function () {
                            .duration(500)
                            .style('opacity', 0);
                         d3.select(this)
-                          .style('fill', function (d,i) { return color(i); }).transition()
+                          .style('fill', function (d, i) { return color(i); }).transition()
                           .duration(100).attr('r', function (d) {return 3});
                     });
 
@@ -834,7 +834,7 @@ app.directive('discreteEmotionsScatterChart', function () {
                            .duration(500)
                            .style('opacity', 0);
                         d3.select(this)
-                          .style('fill', function (d,i) { return color(i); }).transition()
+                          .style('fill', function (d, i) { return color(i); }).transition()
                           .duration(100).attr('r', function (d) {return 3});
                     });
 
@@ -867,7 +867,7 @@ app.directive('discreteEmotionsScatterChart', function () {
                            .duration(500)
                            .style('opacity', 0);
                         d3.select(this)
-                          .style('fill', function (d,i) { return color(i); }).transition()
+                          .style('fill', function (d, i) { return color(i); }).transition()
                           .duration(100).attr('r', function (d) {return 3});
                     });
             }

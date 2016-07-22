@@ -1,8 +1,10 @@
 'use strict';
 
+var fs = require('fs');
+
 var controllers = angular.module('controllers.client', []);
 
-controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundFilter, $log, scaleFilter, emotionSumFilter, emotionSumGroupFilter, emotionArgmaxFilter, emotionArgmaxReduceFilter, emotionArgmaxCombineFrequentFilter, emotionWeightedMeanFilter, valenceAsAvgMaxPosMaxNegFilter, imageScoresWeightedMeanFilter, meanValenceArousalFilter, FileSaver, Blob) {
+controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundFilter, $log, scaleFilter, emotionSumFilter, emotionSumGroupFilter, emotionArgmaxFilter, emotionArgmaxReduceFilter, emotionArgmaxCombineFrequentFilter, emotionWeightedMeanFilter) {
 
     $scope.spSessions = [];
     //$scope.selfReportedEmotions = [];
@@ -43,8 +45,6 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
             emotion_level: []
         } ];
 
-    // Living Well on the Spectrum: How to Use Your Strengths to Meet the ...
-    // Par Valerie L. Gaus, page 91 Joy === Happy
     var valenceArousalMappingTable = [
         { 'emotion_name': 'ANGER', 'valence': -37, 'arousal': 47, dim: 'np' },
         { 'emotion_name': 'FEAR', 'valence': -61, 'arousal': 7, dim: 'np' },
@@ -353,8 +353,7 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
         // _plotVideoEmotionsLineChart($scope.videoEmotions, $scope.selectedSpSessions);
         _plotAudioEmotionsLineChart($scope.audioEmotions, $scope.selectedSpSessions);
 
-        mapAudioSegsToImages($scope.audioEmotions, $scope.selectedSpSessions);
-        // FIXME-EMOVIZ
+        // FIXME-EMOVIZ 
         $scope.screenshotsOfAudioSegment = _getScreenshotsOfAudioSegment($scope.audioEmotions, 4, $scope.videoEmotions, $scope.selectedSpSessions)
     };
 
@@ -520,14 +519,9 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
 
             _.forEach(audioEmotions.result.analysisSegments, function (oItem, index) {
                 var oSegsTimeEnd = _.last(audioEmotions.result.analysisSegments).offset + _.last(audioEmotions.result.analysisSegments).duration;
-                var oSegsTimeStart = _.first(audioEmotions.result.analysisSegments).offset;
                 var oSegTimeEnd = oItem.offset + oItem.duration;
                 var oSegTimeStart = oItem.offset;
 
-                if (screenshotTimePosition <= oSegsTimeStart) {
-                    (screenshotBySegs[ 0 ] = (screenshotBySegs[ 0 ] || [])).push(vItem);
-                    return false;
-                }
                 if (screenshotTimePosition >= oSegsTimeEnd) {
                     (screenshotBySegs[ _.size(audioEmotions.result.analysisSegments) - 1 ] = (screenshotBySegs[ _.size(audioEmotions.result.analysisSegments) - 1 ] || [])).push(vItem);
                     return false;
@@ -557,132 +551,6 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
     }
 
     $scope.showIt = true;
-
-    /**
-     * Map moodMap to 4 main emotion Calm, Angry, Sad, Happy ==> CASH
-     * @param valenceArousal : {valence: XX, arousal: YY}
-     */
-    function mapValenceArousalToCASH (valenceArousal) {
-        if (valenceArousal.valence > 0 && valenceArousal.arousal > 0) return 'happy';
-        if (valenceArousal.valence >= 0 && valenceArousal.arousal <= 0) return 'calm';
-        if (valenceArousal.valence < 0 && valenceArousal.arousal < 0) return 'sad';
-        if (valenceArousal.valence < 0 && valenceArousal.arousal > 0) return 'angry';
-    }
-
-    function mapValenceArousalToCASHWithNeutralRange (valenceArousal) {
-
-        $log.info('valenceArousal================', valenceArousal);
-
-        if (valenceArousal.valence * 100 > 5 && valenceArousal.arousal * 100 > 0) return 'happy';
-        else if (valenceArousal.valence * 100 < 0 && valenceArousal.arousal * 100 < -5) return 'sad';
-        else if (valenceArousal.valence * 100 < -5 && valenceArousal.arousal * 100 > 0) return 'angry';
-        else return 'calm';
-    }
-
-    function mapAudioSegsToImages (jsonData, spSession) {
-        // Here I'm going to use the same code I have done in
-        // mapping images to audio segments, for each image I'll
-        // compute the weighted mean and get valence and arousal values
-        // for each image. And after that for each image the valence arousal
-        // of the audio is the same for all the bag images of the segment
-        var screenshotsBySeg = _getScreenshotsOfAudioSegment($scope.audioEmotions, 4, $scope.videoEmotions, $scope.selectedSpSessions);
-
-        // for each bag of images do
-        //      for each image do
-        //          compute weighted mean valence arousal
-        var screenshotsBySegMapped = [];
-        _.forEach(screenshotsBySeg, function (imagesBag) {
-            var _imagesBag = [];
-            _.forEach(imagesBag, function (image) {
-
-                _imagesBag.push(_.extend({}, imageScoresWeightedMeanFilter(image.scores), { image: image.screenshot }));
-            });
-
-            screenshotsBySegMapped.push(_imagesBag);
-        });
-
-        // try to see emovu's approach of valence
-        var screenshotsBySegMapped0 = [];
-        _.forEach(screenshotsBySeg, function (imagesBag) {
-            var _imagesBag = [];
-            _.forEach(imagesBag, function (image) {
-
-                _imagesBag.push(_.extend({}, {
-                    valence: scaleFilter(valenceAsAvgMaxPosMaxNegFilter(image.scores) * 100),
-                    arousal: 0
-                }, { image: image.screenshot }));
-            });
-
-            screenshotsBySegMapped0.push(_imagesBag);
-        });
-
-
-        var audioEmotions = _.where($scope.audioEmotions, { 'sp_session': { '$oid': $scope.selectedSpSessions } });
-        audioEmotions = _.first(audioEmotions);
-        audioEmotions = _.get(audioEmotions, 'audio_emotion_scores');
-        audioEmotions = audioEmotions.result.analysisSegments;
-
-        // I'll construct an array which contain values valence and arousal of each bag of images
-        var audioValenceArousalArray = [];
-        _.forEach(screenshotsBySegMapped, function (imagesBag, index) {
-            audioValenceArousalArray.push(_.fill(Array(imagesBag.length), {
-                valence: scaleFilter(_.get(audioEmotions[ index ], 'analysis.Valence.Value')),
-                arousal: scaleFilter(_.get(audioEmotions[ index ], 'analysis.Arousal.Value'))
-            }));
-        });
-
-        // I'd like to see the distribution of video with weighted mean for each image
-        //screenshotsBySegMapped = _.flatten(screenshotsBySegMapped);
-
-        // audio valence arousal corresponding to each image
-        audioValenceArousalArray = _.flatten(audioValenceArousalArray);
-
-        var screenshotsBySegMapped2 = _.map(_.flatten(screenshotsBySegMapped), function (object) {
-            return {
-                valence: _.get(object, 'valence') / 100.00,
-                arousal: _.get(object, 'arousal') / 100.00,
-                image: _.get(object, 'image')
-            };
-        });
-
-        $scope.videoData = _.map(screenshotsBySegMapped2, function (item) {
-            return _.values(item);
-        });
-
-        var screenshotsBySegMapped3 = _.map(screenshotsBySegMapped, function (imagesBag) {
-            return meanValenceArousalFilter(imagesBag);
-        });
-
-        var screenshotsBySegMapped3 = _.map(_.flatten(screenshotsBySegMapped3), function (object) {
-            return { valence: _.get(object, 'valence') / 100.00, arousal: _.get(object, 'arousal') / 100.00 };
-        });
-
-        $scope.screenshotsBySegMapped3 = screenshotsBySegMapped3;
-
-        $scope.videoData2 = _.map(screenshotsBySegMapped3, function (item) {
-            return _.values(item);
-        });
-
-        $log.info('screenshotsBySegMapped=====', screenshotsBySegMapped3)
-
-
-        // saveAsFile(_.pluck(screenshotsBySegMapped3, 'valence'), 'valenceMeanVAllImages');
-        // saveAsFile(_.pluck(screenshotsBySegMapped3, 'arousal'), 'arousalMeanVAllImages');
-
-        // saveAsFile(_.pluck(audioValenceArousalArray, 'valence'), 'valenceAAllImages');
-        // saveAsFile(_.pluck(audioValenceArousalArray, 'arousal'), 'arousalAAllImages');
-
-
-        $log.info('screenshotsBySegMapped0 ==', screenshotsBySegMapped0)
-
-        var screenshotsBySegMapped0 = _.map(screenshotsBySegMapped0, function (imagesBag) {
-            return meanValenceArousalFilter(imagesBag);
-        });
-
-
-        return [ screenshotsBySegMapped3, _.flatten(screenshotsBySegMapped0) ];
-    }
-
 
     function _plotAudioEmotionsLineChart (jsonData, spSession) {
 
@@ -757,8 +625,7 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
             // strategy mean
             valenceArousal = emotionArgmaxFilter(vItems);
             valenceArousal = emotionArgmaxReduceFilter(valenceArousal);
-            // valenceArousal = emotionArgmaxCombineFrequentFilter(valenceArousal);
-
+            valenceArousal = emotionArgmaxCombineFrequentFilter(valenceArousal);
             valenceArousal = emotionWeightedMeanFilter(valenceArousal);
 
             resMeanStrategy.push({
@@ -779,33 +646,12 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
             });
         });
 
-        var screenshotsBySegMappedMeanSegForEachImage = _.map(mapAudioSegsToImages($scope.audioEmotions, $scope.selectedSpSessions)[ 0 ], function (object, index) {
-            return {
-                x: index,
-                valence: _.get(object, 'valence') * 100,
-                arousal: _.get(object, 'arousal') * 100
-            };
-        });
-
-        var screenshotsBySegMappedMeanSegForEachImage0 = _.map(mapAudioSegsToImages($scope.audioEmotions, $scope.selectedSpSessions)[ 1 ], function (object, index) {
-            return {
-                x: index,
-                valence: _.get(object, 'valence'),
-                arousal: _.get(object, 'arousal')
-            };
-        });
-
-        $log.info('screenshotsBySegMappedMeanSegForEachImage=============', screenshotsBySegMappedMeanSegForEachImage)
-
 
         // map resMeanStrategy to moodmap
         var resMeanStrategyMoodMap = _.map(resMeanStrategy, function (item) {
             return [ item.valence / 100.00, item.arousal / 100.00, '', '' ];
         });
 
-        var __valenceAudio = _.map(resVA, function (item) {
-            return item.valence
-        });
         $scope.audiodata = {
             dataset0: [
                 //{ x: 0, valence: 0, arousal: 0 },
@@ -823,10 +669,9 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
                 //{ x: 0, valence: 0 },
             ].concat(resMeanStrategy),
             dataset5: resMeanStrategyMoodMap,
-            dataset6: resAudioVideoMeanFusion,
-            dataset7: screenshotsBySegMappedMeanSegForEachImage,
-            dataset8: screenshotsBySegMappedMeanSegForEachImage0
+            dataset6: resAudioVideoMeanFusion
         };
+
 
         $scope.audiooptionsVA = {
             series: [
@@ -838,17 +683,7 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
                     color: "#FFD600",
                     type: [ 'line', 'dot' ],
                     id: 'mySeries0'
-                }/*,
-                 {
-                 axis: "y",
-                 dataset: "dataset0",
-                 key: "valence",
-                 label: "Valence Audio",
-                 color: "#FFD600",
-                 type: ['line',],
-                 interpolation: {mode: "bundle", tension: 0.7},
-                 id: 'mySeries0Inter'
-                 }*/,
+                },
                 {
                     axis: "y",
                     dataset: "dataset4",
@@ -857,26 +692,16 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
                     color: "#64DD17",
                     type: [ 'line', 'dot' ],
                     id: 'mySeries00'
-                }/*,
-                 {
-                 axis: "y",
-                 dataset: "dataset4",
-                 key: "valence",
-                 label: "Valence Video",
-                 color: "#64DD17",
-                 type: ['line'],
-                 interpolation: {mode: "bundle", tension: 0.7},
-                 id: 'mySeries00Inter'
-                 }*//*,
-                 {
-                 axis: "y",
-                 dataset: "dataset6",
-                 key: "valence",
-                 label: "Mean Valence",
-                 color: "#D500F9",
-                 type: ['line', 'dot'],
-                 id: 'mySeriesMean2'
-                 }*/,
+                },
+                {
+                    axis: "y",
+                    dataset: "dataset6",
+                    key: "valence",
+                    label: "Mean Valence",
+                    color: "#D500F9",
+                    type: [ 'line', 'dot' ],
+                    id: 'mySeriesMean2'
+                },
                 {
                     axis: "y",
                     dataset: "dataset0",
@@ -894,340 +719,25 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
                     color: "#00B8D4",
                     type: [ 'line', 'dot' ],
                     id: 'mySeries11'
-                }/*,
-                 {
-                 axis: "y",
-                 dataset: "dataset6",
-                 key: "arousal",
-                 label: "Mean Arousal",
-                 color: "#F50057",
-                 type: ['line', 'dot'],
-                 id: 'mySeriesMean1'
-                 }*/,
-                {
-                    axis: "y",
-                    dataset: "dataset7",
-                    key: "valence",
-                    label: "Valence each ",
-                    color: "blue",
-                    type: [ 'line', 'dot' ],
-                    id: 'mySeriesMean202'
                 },
                 {
                     axis: "y",
-                    dataset: "dataset7",
+                    dataset: "dataset6",
                     key: "arousal",
-                    label: "Arousal",
-                    color: "orange",
+                    label: "Mean Arousal",
+                    color: "#F50057",
                     type: [ 'line', 'dot' ],
-                    id: 'mySeriesMean201'
-                },
-                {
-                    axis: "y",
-                    dataset: "dataset8",
-                    key: "valence",
-                    label: "Valence Emovu ",
-                    color: "#E040FB",
-                    type: [ 'line', 'dot' ],
-                    id: 'mySeriesMean233'
+                    id: 'mySeriesMean1'
                 }
             ],
             axes: { x: { key: "x" } }
         };
 
-        // saving data into csv files
-        // var __valenceVideo = _.map(resMeanStrategy, function (item) {
-        //     return item.valence
-        // });
-        //
-        // var __arousalAudio = _.map(resVA, function (item) {
-        //     return item.arousal
-        // });
-        //
-        // var __arousalVideo = _.map(resMeanStrategy, function (item) {
-        //     return item.arousal
-        // });
-        //
-        // var valenceAudio = new Blob([__valenceAudio.join(',')], {type: 'text/plain;charset=utf-8'});
-        // var valenceVideo = new Blob([__valenceVideo.join(',')], {type: 'text/plain;charset=utf-8'});
-        //
-        // var arousalAudio = new Blob([__arousalAudio.join(',')], {type: 'text/plain;charset=utf-8'});
-        // var arousalVideo = new Blob([__arousalVideo.join(',')], {type: 'text/plain;charset=utf-8'});
-        //
-        // FileSaver.saveAs(valenceAudio, 'valenceAudio-' + $scope.selectedSpSessions + '.csv');
-        // FileSaver.saveAs(valenceVideo, 'valenceVideo-' + $scope.selectedSpSessions + '.csv');
-        //
-        // FileSaver.saveAs(arousalAudio, 'arousalAudio-' + $scope.selectedSpSessions + '.csv');
-        // FileSaver.saveAs(arousalVideo, 'arousalVideo-' + $scope.selectedSpSessions + '.csv');
 
-        var cashAudioEmotions = { x: 1, calm: 0, angry: 0, sad: 0, happy: 0 };
-        var cashVideoEmotions = { x: 1, calm: 0, angry: 0, sad: 0, happy: 0 };
-        var videoEmotions = _.where($scope.videoEmotions, { 'sp_session': { '$oid': $scope.selectedSpSessions } });
-        videoEmotions = _.first(videoEmotions);
-        _.forEach(videoEmotions.video_emotion_scores, function (item) {
-
-            var _max = _propPaisWiseArgmax(item.scores);
-            var matchedValenceArousal = _.where(valenceArousalMappingTable, { 'emotion_name': _max[ 0 ] });
-            matchedValenceArousal = _.first(matchedValenceArousal);
-
-            var videoEmotion = mapValenceArousalToCASH(matchedValenceArousal);
-
-            switch (videoEmotion) {
-                case 'calm':
-                    cashVideoEmotions.calm += 1;
-                    break;
-                case 'angry':
-                    cashVideoEmotions.angry += 1;
-                    break;
-                case 'sad':
-                    cashVideoEmotions.sad += 1;
-                    break;
-                case 'happy':
-                    cashVideoEmotions.happy += 1;
-                    break;
-            }
+        fs.writeFile('./datasetsBySession.json', $scope.audiooptionsVA, function (err) {
+            if (err) throw err;
+            $log.info('It\'s saved!');
         });
-
-        var cashVideoEmotionsWMForEach = { x: 1, calm: 0, angry: 0, sad: 0, happy: 0 };
-        // _.forEach(mapAudioSegsToImages($scope.audioEmotions, $scope.selectedSpSessions), function (item) {
-        //     var videoEmotion = mapValenceArousalToCASHWithNeutralRange(item);
-        //
-        //     switch (videoEmotion) {
-        //         case 'calm':
-        //             cashVideoEmotionsWMForEach.calm += 1;
-        //             break;
-        //         case 'angry':
-        //             cashVideoEmotionsWMForEach.angry += 1;
-        //             break;
-        //         case 'sad':
-        //             cashVideoEmotionsWMForEach.sad += 1;
-        //             break;
-        //         case 'happy':
-        //             cashVideoEmotionsWMForEach.happy += 1;
-        //             break;
-        //     }
-        //
-        // });
-
-
-        _.forEach(resVA, function (item, index) {
-            var audioEmotion = mapValenceArousalToCASH(item);
-            // var videoEmotion = mapValenceArousalToCASH(resMeanStrategy[ index ]);
-            switch (audioEmotion) {
-                case 'calm':
-                    cashAudioEmotions.calm += 1;
-                    break;
-                case 'angry':
-                    cashAudioEmotions.angry += 1;
-                    break;
-                case 'sad':
-                    cashAudioEmotions.sad += 1;
-                    break;
-                case 'happy':
-                    cashAudioEmotions.happy += 1;
-                    break;
-            }
-        });
-
-
-        // normalize the both audio and video objects to get a comparable result
-        // ---------------------------------------------------------------------
-        var cashAudioEmotionsSum = cashAudioEmotions.calm + cashAudioEmotions.sad + cashAudioEmotions.angry + cashAudioEmotions.happy;
-        var cashVideoEmotionsSum = cashVideoEmotions.calm + cashVideoEmotions.sad + cashVideoEmotions.angry + cashVideoEmotions.happy;
-        var cashVideoEmotionsWMForEachSum = cashVideoEmotionsWMForEach.calm + cashVideoEmotionsWMForEach.sad + cashVideoEmotionsWMForEach.angry + cashVideoEmotionsWMForEach.happy;
-
-        cashAudioEmotions.calm /= cashAudioEmotionsSum / 100;
-        cashAudioEmotions.angry /= cashAudioEmotionsSum / 100;
-        cashAudioEmotions.sad /= cashAudioEmotionsSum / 100;
-        cashAudioEmotions.happy /= cashAudioEmotionsSum / 100;
-
-        cashVideoEmotions.calm /= cashVideoEmotionsSum / 100;
-        cashVideoEmotions.angry /= cashVideoEmotionsSum / 100;
-        cashVideoEmotions.sad /= cashVideoEmotionsSum / 100;
-        cashVideoEmotions.happy /= cashVideoEmotionsSum / 100;
-
-        cashVideoEmotionsWMForEach.calm /= cashVideoEmotionsWMForEachSum / 100;
-        cashVideoEmotionsWMForEach.angry /= cashVideoEmotionsWMForEachSum / 100;
-        cashVideoEmotionsWMForEach.sad /= cashVideoEmotionsWMForEachSum / 100;
-        cashVideoEmotionsWMForEach.happy /= cashVideoEmotionsWMForEachSum / 100;
-
-        // round
-        cashAudioEmotions.calm = _.round(cashAudioEmotions.calm, 3);
-        cashAudioEmotions.angry = _.round(cashAudioEmotions.angry, 3);
-        cashAudioEmotions.sad = _.round(cashAudioEmotions.sad, 3);
-        cashAudioEmotions.happy = _.round(cashAudioEmotions.happy, 3);
-
-        cashVideoEmotions.calm = _.round(cashVideoEmotions.calm, 3);
-        cashVideoEmotions.angry = _.round(cashVideoEmotions.angry, 3);
-        cashVideoEmotions.sad = _.round(cashVideoEmotions.sad, 3);
-        cashVideoEmotions.happy = _.round(cashVideoEmotions.happy, 3);
-
-        cashVideoEmotionsWMForEach.calm = _.round(cashVideoEmotionsWMForEach.calm, 3);
-        cashVideoEmotionsWMForEach.angry = _.round(cashVideoEmotionsWMForEach.angry, 3);
-        cashVideoEmotionsWMForEach.sad = _.round(cashVideoEmotionsWMForEach.sad, 3);
-        cashVideoEmotionsWMForEach.happy = _.round(cashVideoEmotionsWMForEach.happy, 3);
-
-        $scope.audioHistoData = {
-            dataset0: [ { x: 0 }, cashAudioEmotions, { x: 2 } ],
-            dataset1: [ { x: 0 }, cashVideoEmotions, { x: 2 } ],
-            dataset2: [ { x: 0 }, cashVideoEmotionsWMForEach, { x: 2 } ]
-        };
-
-        $scope.audioHistoOpt = {
-            margin: { top: 5 },
-            series: [
-                {
-                    axis: "y",
-                    dataset: "dataset0",
-                    key: "calm",
-                    label: "Calm",
-                    color: "#2c9cc2",
-                    type: [ 'column' ],
-                    id: 'mySeriesCalm0'
-                },
-                {
-                    axis: "y",
-                    dataset: "dataset0",
-                    key: "angry",
-                    label: "Angry",
-                    color: "#f99937",
-                    type: [ 'column' ],
-                    id: 'mySerieAngry1'
-                },
-                {
-                    axis: "y",
-                    dataset: "dataset0",
-                    key: "sad",
-                    label: "Sad",
-                    color: "#92678c",
-                    type: [ 'column' ],
-                    id: 'mySeriesSad2'
-                },
-                {
-                    axis: "y",
-                    dataset: "dataset0",
-                    key: "happy",
-                    label: "Happy",
-                    color: "#9fca45",
-                    type: [ 'column' ],
-                    id: 'mySeriesHappy3'
-                }
-            ],
-            axes: {
-                x: {
-                    key: "x",
-                    ticks: [ 0, 1, 2 ]
-                },
-                y: {
-                    max: _.max(_.values(cashAudioEmotions)) + 10
-                }
-            }
-        };
-
-
-        $scope.videoHistoOpt = {
-            margin: { top: 5 },
-            series: [
-                {
-                    axis: "y",
-                    dataset: "dataset1",
-                    key: "calm",
-                    label: "Calm",
-                    color: "#2c9cc2",
-                    type: [ 'column' ],
-                    id: 'mySeriesCalm0'
-                },
-                {
-                    axis: "y",
-                    dataset: "dataset1",
-                    key: "angry",
-                    label: "Angry",
-                    color: "#f99937",
-                    type: [ 'column' ],
-                    id: 'mySerieAngry0'
-                },
-                {
-                    axis: "y",
-                    dataset: "dataset1",
-                    key: "sad",
-                    label: "Sad",
-                    color: "#92678c",
-                    type: [ 'column' ],
-                    id: 'mySeriesSad0'
-                },
-                {
-                    axis: "y",
-                    dataset: "dataset1",
-                    key: "happy",
-                    label: "Happy",
-                    color: "#9fca45",
-                    type: [ 'column' ],
-                    id: 'mySeriesHappy0'
-                }
-            ],
-            axes: {
-                x: {
-                    key: "x",
-                    ticks: [ 0, 1, 2 ]
-                },
-                y: {
-                    max: _.max(_.values(cashVideoEmotions)) + 10
-                }
-            }
-        };
-
-
-        $scope.videoHistoOpt2 = {
-            margin: { top: 5 },
-            series: [
-                {
-                    axis: "y",
-                    dataset: "dataset2",
-                    key: "calm",
-                    label: "Calm",
-                    color: "#2c9cc2",
-                    type: [ 'column' ],
-                    id: 'mySeriesCalm0'
-                },
-                {
-                    axis: "y",
-                    dataset: "dataset2",
-                    key: "angry",
-                    label: "Angry",
-                    color: "#f99937",
-                    type: [ 'column' ],
-                    id: 'mySerieAngry0'
-                },
-                {
-                    axis: "y",
-                    dataset: "dataset2",
-                    key: "sad",
-                    label: "Sad",
-                    color: "#92678c",
-                    type: [ 'column' ],
-                    id: 'mySeriesSad0'
-                },
-                {
-                    axis: "y",
-                    dataset: "dataset2",
-                    key: "happy",
-                    label: "Happy",
-                    color: "#9fca45",
-                    type: [ 'column' ],
-                    id: 'mySeriesHappy0'
-                }
-            ],
-            axes: {
-                x: {
-                    key: "x",
-                    ticks: [ 0, 1, 2 ]
-                },
-                y: {
-                    max: _.max(_.values(cashVideoEmotionsWMForEach)) + 10
-                }
-            }
-        };
-
 
         $scope.audiooptionsPosNegNeu = {
             series: [
@@ -1259,9 +769,8 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
                     id: 'mySeries1'
                 }
             ],
-            axes: {
-                x: { key: "x" }
-            }
+            axes: { x: { key: "x" } }
+
         };
 
 
@@ -1295,17 +804,10 @@ controllers.controller('MainCtrl', function ($scope, $http, $mdToast, d3, roundF
                     id: 'mySeries1'
                 }
             ],
-            axes: {
-                x: { key: "x" }
-            }
+            axes: { x: { key: "x" } }
         }
 
     }
 
-
-    function saveAsFile (arrayData, nameOfFile) {
-        var data = new Blob([ arrayData.join(',') ], { type: 'text/plain;charset=utf-8' });
-        FileSaver.saveAs(data, nameOfFile + $scope.selectedSpSessions + '.csv');
-    }
 
 });

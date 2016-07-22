@@ -11,6 +11,13 @@ header {
     justify-content: space-between;
 }
 
+#audioVideoContainerColumnChart {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 #videoContainer {
     padding: 10px;
     display: flex;
@@ -22,7 +29,6 @@ header {
     display: flex;
     flex-direction: column;
 }
-
 
 #videoContainerTab {
     padding: 10px;
@@ -36,14 +42,13 @@ header {
     flex-direction: column;
 }
 
-
 .table {
     width: 100%;
 }
 
 thead {
     display: table-header-group;
-    //vertical-align: middle;
+/ / vertical-align: middle;
     border-color: inherit;
     text-align: left;
 }
@@ -98,8 +103,8 @@ div.tooltip {
     pointer-events: none;
     border-radius: 2px;
     color: #fff;
-    display:inline-block;
-    overflow:auto;
+    display: inline-block;
+    overflow: auto;
 }
 
 .emoviz-selfreported-styles #my-mood {
